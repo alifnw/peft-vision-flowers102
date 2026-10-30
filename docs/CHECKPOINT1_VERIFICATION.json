@@ -308,5 +308,33 @@
     "mermaid_render_hashes_verified": 4,
     "full_notebook_rerun": false,
     "training_started": false
+  },
+  "submission_completion": {
+    "verified_at_utc": "2026-10-30T16:39:23.160698+00:00",
+    "scope": "Documentation completion against the submission guideline. No new training, calibration fitting, statistical analysis, or full notebook rerun.",
+    "notebook_sha256": "258604f315f9aa8d6d5991312e499644a7ede9d04a7a4f01d0d15fe7c81c677c",
+    "mentor": "Husein Sidharta Muhammad",
+    "submission_date_wib": "2026-10-30",
+    "notebook_cells": 42,
+    "main_sections": 9,
+    "toc_links_verified": 9,
+    "changed_markdown_cells": [
+      0,
+      2,
+      3,
+      4,
+      8,
+      10,
+      16,
+      39,
+      41
+    ],
+    "all_code_cells_and_stored_outputs_unchanged": true,
+    "raw_experiment_artifacts_unchanged": true,
+    "references_verified": 10,
+    "asset_hashes_verified": 59,
+    "model_release_in_repository": false,
+    "new_image_inference_demonstrated": false,
+    "cpu_prediction_replay_scope_explicit": true
   }
 }

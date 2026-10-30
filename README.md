@@ -4,7 +4,7 @@
 
 Partial reproduction with exploratory analysis of [Lessons and Insights from a Unifying Study of Parameter-Efficient Fine-Tuning in Visual Recognition](https://arxiv.org/abs/2409.16434), CVPR 2025.
 
-The [notebook](notebooks/01_flowers102_checkpoint1.ipynb) reports the dataset audit, ViT and adaptation methods, training protocol, results, error analysis and proposed extensions.
+The [notebook](notebooks/01_flowers102_checkpoint1.ipynb) reports the research summary, related work, dataset audit, ViT and adaptation methods, training protocol, results, error analysis and proposed extensions.
 
 Research question: under a fixed training configuration, how do Linear, LoRA and SSF differ in probability quality and prediction errors despite achieving the same validation accuracy?
 
@@ -13,6 +13,7 @@ Research question: under a fixed training configuration, how do Linear, LoRA and
 - Linear probing, LoRA and SSF completed 100 epochs on the same 800-image training and 200-image validation split.
 - Stored logits, histories, initialization hashes and checkpoint-reload predictions were checked.
 - CPU analysis includes macro recall, NLL, Brier, reliability plots, paired bootstrap and two ensemble aggregation rules.
+- The report distinguishes CPU replay of stored predictions from model inference. Model checkpoint distribution and a new-image inference demo remain outside this checkpoint.
 - Hyperparameter search, repeated training seeds, trainval retraining and final test evaluation remain pending.
 - ConvPass stopped at epoch 92 and is excluded from the completed-method comparison.
 
