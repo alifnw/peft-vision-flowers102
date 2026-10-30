@@ -1,0 +1,69 @@
+{
+  "checked_date_wib": "2026-10-30",
+  "references": [
+    {
+      "title": "Lessons and Insights from a Unifying Study of Parameter-Efficient Fine-Tuning in Visual Recognition",
+      "authors": "Zheda Mai et al.",
+      "year": 2025,
+      "venue": "CVPR 2025",
+      "url": "https://arxiv.org/abs/2409.16434",
+      "review_scope": "Main paper and appendix inspected, including sections 3-4, Appendix A, Table 3 and Figure 11"
+    },
+    {
+      "title": "EulerLoRA: Rank-Driven Jump Dynamics for Calibrated Parameter-Efficient Fine-Tuning",
+      "authors": "Srinivas Anumasa and Dianbo Liu",
+      "year": 2026,
+      "venue": "arXiv preprint",
+      "url": "https://arxiv.org/abs/2608.01142",
+      "review_scope": "Author record, abstract and metadata inspected"
+    },
+    {
+      "title": "Trade-offs in Ensembling, Merging and Routing Among Parameter-Efficient Experts",
+      "authors": "Sanae Lotfi, Lucas Caccia, Alessandro Sordoni, Jordan Ash and Miroslav Dudik",
+      "year": 2026,
+      "venue": "arXiv, listed by Microsoft Research",
+      "url": "https://www.microsoft.com/en-us/research/publication/trade-offs-in-ensembling-merging-and-routing-among-parameter-efficient-experts/",
+      "review_scope": "Official Microsoft Research abstract and metadata inspected, LLM setting"
+    },
+    {
+      "title": "Unveiling PEFT Robustness to Noisy Labels in VLMs: A Gradient-Loss Decoupling Perspective",
+      "authors": "Tengfei Ma, Weiran Pan and Wei Wei",
+      "year": 2026,
+      "venue": "ICMR 2026",
+      "url": "https://doi.org/10.1145/3805622.3810828",
+      "review_scope": "Abstract and publication metadata checked. Full text not reviewed."
+    },
+    {
+      "title": "Fixed-Budget Parameter-Efficient Training with Frozen Encoders Improves Multimodal Chest X-Ray Classification",
+      "authors": "Md Ashik Khan and Md Nahid Siddique",
+      "year": 2025,
+      "venue": "ICCIT 2025 acceptance stated on arXiv record",
+      "url": "https://arxiv.org/abs/2512.21508",
+      "review_scope": "Author arXiv record and abstract inspected"
+    },
+    {
+      "title": "Oxford Flowers102",
+      "authors": "Maria-Elena Nilsback and Andrew Zisserman",
+      "year": 2008,
+      "venue": "Original dataset and ICVGIP 2008 publication",
+      "url": "https://www.robots.ox.ac.uk/~vgg/data/flowers/102/",
+      "review_scope": "Original dataset page and project snapshot"
+    },
+    {
+      "title": "Pinned official ViT_PEFT_Vision implementation",
+      "authors": "OSU-MLB",
+      "year": 2025,
+      "venue": "GitHub source",
+      "url": "https://github.com/OSU-MLB/ViT_PEFT_Vision/tree/cea7e21b2ddecef8172f5d177da5a29d531c4279",
+      "review_scope": "Pinned native model, transforms and default configuration inspected"
+    },
+    {
+      "title": "VTAB-1k community mirror",
+      "authors": "XiN0919",
+      "year": null,
+      "venue": "Hugging Face dataset mirror",
+      "url": "https://huggingface.co/datasets/XiN0919/VTAB-1k",
+      "review_scope": "Revision a1c257fbbeebd3260c0a201fe6a6c9916b56eee7, archive and split integrity checked"
+    }
+  ]
+}

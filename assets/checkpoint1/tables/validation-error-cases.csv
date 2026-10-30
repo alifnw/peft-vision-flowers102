@@ -1,0 +1,6 @@
+validation_row,true_label,training_examples_of_true_class,image_file,Linear_prediction,Linear_confidence,Linear_correct,LoRA_prediction,LoRA_confidence,LoRA_correct,SSF_prediction,SSF_confidence,SSF_correct
+8,67,6,images/validation-row-008.jpg,67,0.5952981815,True,14,0.5890844907,False,14,0.6517227933,False
+40,42,9,images/validation-row-040.jpg,41,0.6730740773,False,42,0.8921979321,True,42,0.9450553751,True
+84,97,9,images/validation-row-084.jpg,97,0.4282853518,True,97,0.4727300603,True,50,0.4603752269,False
+97,42,9,images/validation-row-097.jpg,42,0.198706081,True,92,0.3587489335,False,42,0.3541957778,True
+126,30,6,images/validation-row-126.jpg,29,0.3341001184,False,30,0.6244177381,True,30,0.801009573,True

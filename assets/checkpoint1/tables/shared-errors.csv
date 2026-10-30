@@ -1,0 +1,4 @@
+method,Linear,LoRA,SSF
+Linear,2,0,0
+LoRA,0,2,1
+SSF,0,1,2

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="928.8pt" height="180.001094pt" viewBox="0 0 928.8 180.001094" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>PEFT Checkpoint 1</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 180.001094
+L 928.8 180.001094
+L 928.8 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 10.716923 131.836191
+L 144.36 131.836191
+L 144.36 64.802715
+L 10.716923 64.802715
+z
+" clip-path="url(#pe62d05d077)" style="fill: #eef1f7; stroke: #465d86; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 162.648 131.836191
+L 296.291077 131.836191
+L 296.291077 64.802715
+L 162.648 64.802715
+z
+" clip-path="url(#pe62d05d077)" style="fill: #eef1f7; stroke: #465d86; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 314.579077 131.836191
+L 448.222154 131.836191
+L 448.222154 64.802715
+L 314.579077 64.802715
+z
+" clip-path="url(#pe62d05d077)" style="fill: #eef1f7; stroke: #465d86; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 466.510154 131.836191
+L 600.153231 131.836191
+L 600.153231 64.802715
+L 466.510154 64.802715
+z
+" clip-path="url(#pe62d05d077)" style="fill: #eef1f7; stroke: #465d86; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 618.441231 131.836191
+L 752.084308 131.836191
+L 752.084308 64.802715
+L 618.441231 64.802715
+z
+" clip-path="url(#pe62d05d077)" style="fill: #eef1f7; stroke: #465d86; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 770.372308 131.836191
+L 904.015385 131.836191
+L 904.015385 64.802715
+L 770.372308 64.802715
+z
+" clip-path="url(#pe62d05d077)" style="fill: #eef1f7; stroke: #465d86; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #262626" transform="translate(45.068149 94.916523)">Gambar RGB</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #262626" transform="translate(52.313462 106.918477)">224 x 224</text>
+   </g>
+   <g id="patch_8">
+    <path d="M 147.765302 98.319453
+Q 153.504745 98.319453 158.126154 98.319453
+" style="fill: none; stroke: #555555; stroke-linecap: round"/>
+    <path d="M 154.126154 96.319453
+L 158.126154 98.319453
+L 154.126154 100.319453
+" style="fill: none; stroke: #555555; stroke-linecap: round"/>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #262626" transform="translate(195.285163 94.916133)">Patch 16 x 16</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #262626" transform="translate(204.22032 106.918867)">196 patch</text>
+   </g>
+   <g id="patch_9">
+    <path d="M 299.696379 98.319453
+Q 305.435822 98.319453 310.057231 98.319453
+" style="fill: none; stroke: #555555; stroke-linecap: round"/>
+    <path d="M 306.057231 96.319453
+L 310.057231 98.319453
+L 306.057231 100.319453
+" style="fill: none; stroke: #555555; stroke-linecap: round"/>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #262626" transform="translate(336.220147 94.916133)">Embedding + CLS</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #262626" transform="translate(340.604522 106.918867)">197 token x 768</text>
+   </g>
+   <g id="patch_10">
+    <path d="M 451.627456 98.319453
+Q 457.366899 98.319453 461.988307 98.319453
+" style="fill: none; stroke: #555555; stroke-linecap: round"/>
+    <path d="M 457.988307 96.319453
+L 461.988307 98.319453
+L 457.988307 100.319453
+" style="fill: none; stroke: #555555; stroke-linecap: round"/>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #262626" transform="translate(483.271536 94.916133)">12 blok Transformer</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #262626" transform="translate(493.041849 106.918867)">attention + MLP</text>
+   </g>
+   <g id="patch_11">
+    <path d="M 603.558533 98.319453
+Q 609.297976 98.319453 613.919384 98.319453
+" style="fill: none; stroke: #555555; stroke-linecap: round"/>
+    <path d="M 609.919384 96.319453
+L 613.919384 98.319453
+L 609.919384 100.319453
+" style="fill: none; stroke: #555555; stroke-linecap: round"/>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #262626" transform="translate(663.136988 94.916133)">Fitur CLS</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #262626" transform="translate(654.4573 106.918867)">768 dimensi</text>
+   </g>
+   <g id="patch_12">
+    <path d="M 755.48961 98.319453
+Q 761.229052 98.319453 765.850461 98.319453
+" style="fill: none; stroke: #555555; stroke-linecap: round"/>
+    <path d="M 761.850461 96.319453
+L 765.850461 98.319453
+L 761.850461 100.319453
+" style="fill: none; stroke: #555555; stroke-linecap: round"/>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #262626" transform="translate(814.369627 94.916133)">Classifier</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #262626" transform="translate(813.209471 106.918867)">102 kelas</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 14px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #262626" x="464.4" y="17.837812" transform="rotate(-0 464.4 17.837812)">Alur ViT-B/16 untuk klasifikasi Flowers102</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pe62d05d077">
+   <rect x="7.2" y="23.837812" width="914.4" height="148.963281"/>
+  </clipPath>
+ </defs>
+</svg>

@@ -1,0 +1,9 @@
+ensemble,members,aggregation,accuracy_percent,correct,wrong,n,nll,brier_multiclass_sum,macro_recall_observed_percent,classes_observed,wilson95_low_percent,wilson95_high_percent,status
+Linear + LoRA,2,probability_mean,100,200,0,200,0.0734310439,0.01955912011,100,90,98.11546736,100,exploratory_on_reused_validation
+Linear + SSF,2,probability_mean,99.5,199,1,200,0.06974389868,0.01887777782,98.88888889,90,97.22262956,99.91168313,exploratory_on_reused_validation
+LoRA + SSF,2,probability_mean,99.5,199,1,200,0.03779541713,0.01285429865,98.88888889,90,97.22262956,99.91168313,exploratory_on_reused_validation
+Linear + LoRA + SSF,3,probability_mean,99.5,199,1,200,0.05921846737,0.01580638042,98.88888889,90,97.22262956,99.91168313,exploratory_on_reused_validation
+Linear + LoRA,2,logit_mean,100,200,0,200,0.05613822107,0.01437246633,100,90,98.11546736,100,exploratory_on_reused_validation
+Linear + SSF,2,logit_mean,99.5,199,1,200,0.05000909508,0.01381293651,98.88888889,90,97.22262956,99.91168313,exploratory_on_reused_validation
+LoRA + SSF,2,logit_mean,99.5,199,1,200,0.03438550631,0.01184410227,98.88888889,90,97.22262956,99.91168313,exploratory_on_reused_validation
+Linear + LoRA + SSF,3,logit_mean,99.5,199,1,200,0.0428813082,0.01201129914,98.88888889,90,97.22262956,99.91168313,exploratory_on_reused_validation

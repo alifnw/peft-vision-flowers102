@@ -1,0 +1,20 @@
+Kategori,Pengaturan,Nilai aktual,Pertimbangan,Konsekuensi,Sumber
+Paper,Backbone,"ViT-B/16, supervised ImageNet-21K",Memakai backbone eksperimen VTAB paper dan menjaga perbandingan antarmetode.,Belum mencakup backbone lain atau CLIP.,"Mai et al., CVPR 2025, section 3 and Appendix A"
+Paper,Optimizer,AdamW,Mengikuti protokol optimasi VTAB paper.,Optimizer lain belum dibandingkan.,"Mai et al., CVPR 2025, section 3 and Appendix A"
+Paper,Epoch,100,Anggaran training sama dan ditetapkan sebelum hasil diamati.,Bukan bukti bahwa 100 epoch optimal untuk setiap metode.,"Mai et al., CVPR 2025, section 3 and Appendix A"
+Paper,Scheduler,Cosine decay,Mengikuti schedule upstream untuk menurunkan learning rate selama training.,Schedule lain belum diablasi.,"Mai et al., CVPR 2025, section 3 and Appendix A"
+Pilihan dalam grid,Learning rate,0.001,"Pilihan awal dari grid VTAB [0.001, 0.01].","Tidak menjalankan seluruh grid, sehingga bukan hasil tuning optimum.",Paper Appendix A.1
+Pilihan dalam grid,Weight decay,0.0001,"Pilihan awal dari grid [0.0001, 0.001].",Pengaruh strength regularisasi belum diisolasi.,Paper Appendix A.1
+Pilihan dalam grid,LoRA rank,8,"Rank 8 termasuk grid [1, 8, 16, 32] dengan kapasitas adaptasi kecil.",Belum ada sweep rank pada eksperimen ini.,Paper Table 3
+Default upstream,LoRA dropout / scale,0.1 / merge_factor=1,Mempertahankan dropout input LoRA dan pengali delta pada kode native.,Tidak memakai aturan alpha/r yang tidak terdapat pada implementasi ini.,Pinned model/lora.py and default_vtab_processed.yml
+Paper,Drop path,0.1,Paper merekomendasikan regularisasi drop path nonzero dalam low-shot training.,Manfaat khusus pada run kita belum diukur melalui ablation 0 versus 0.1.,Paper section 3 and Figure 11
+Default upstream,Warmup,"10 epoch, LR awal 1e-06",Mempertahankan transisi learning rate dari default resmi.,Lama warmup belum dituning.,Pinned upstream experiment/config/default_vtab_processed.yml
+Default upstream,Minimum LR,1e-05,Mempertahankan floor cosine schedule upstream.,Floor lain belum dibandingkan.,Pinned upstream experiment/config/default_vtab_processed.yml
+Default upstream,Transformasi,"Resize bicubic 224 x 224, ToTensor, normalized=False",Mempertahankan transformasi dataset VTAB dari implementasi yang dipin.,Efek normalisasi belum diablasi.,Pinned upstream experiment/config/default_vtab_processed.yml and data/dataset/vtab_processed.py
+Paper,Augmentasi,Tidak diaktifkan,Paper menjaga konsistensi VTAB karena augmentasi yang sama belum tentu menguntungkan 19 task.,Kita belum menguji augmentasi khusus Flowers102.,Paper Appendix A.1
+Default upstream,Seed,42,Mempertahankan seed default dan memeriksa classifier awal yang sama melalui hash.,Satu seed tidak mengukur kestabilan hasil.,Pinned upstream experiment/config/default_vtab_processed.yml
+Resource,Effective batch / microbatch,"64 / 8 untuk LoRA dan SSF, Linear batch langsung 64",Accumulation mengurangi kebutuhan memori per microbatch dengan 12 update per epoch.,Dropout draws dan penjumlahan numerik dapat berbeda dari batch langsung.,Run configs and scripts/gradient_accumulation.py
+Resource,Loader dan precision,"workers=0, pin_memory=False, satu thread, FP32",Membatasi alokasi host pada node bersama dan menjaga satu precision selama baseline.,Parallel loader atau mixed precision belum dibandingkan.,scripts/train_validation.py and run provenance
+Protokol,Drop last,"True, 768 gambar berkontribusi per epoch",Mempertahankan loader upstream dengan batch efektif yang utuh.,"32 dari 800 gambar tidak berkontribusi pada satu epoch, dengan shuffle setiap epoch.",Native loader and train_validation.py
+Protokol,Checkpoint dan resume,"Model terlatih, optimizer, scheduler, RNG dan history disimpan",Melanjutkan run yang terputus resource tanpa mengulang dari nol.,Sumber dan kebijakan resource ketika resume dicatat dalam provenance.,scripts/train_validation.py
+Protokol,Pemilihan hasil,Validation epoch 100,Aturan utama tetap meskipun checkpoint lebih awal memiliki skor tertinggi.,Best checkpoint ditampilkan sebagai diagnostik.,Protocol recorded before full runs

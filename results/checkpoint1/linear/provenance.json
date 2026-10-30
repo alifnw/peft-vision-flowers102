@@ -1,0 +1,59 @@
+{
+  "source_commit": "cea7e21b2ddecef8172f5d177da5a29d531c4279",
+  "tracked_source_diff": "",
+  "python": "3.10.4 (main, Mar 31 2022, 08:41:55) [GCC 7.5.0]",
+  "versions": {
+    "torch": "1.13.0+cu117",
+    "torchvision": "0.14.0+cu117",
+    "timm": "0.9.12",
+    "numpy": "1.24.4",
+    "Pillow": "9.5.0"
+  },
+  "script_sha256": "07fcb84f4e3c09f0eb0b986b3d45a0599390ed05c6c5dec5e2c319db492c8016",
+  "shared_helpers_sha256": "d987b83f850876e4b2f6863be5b7f60955139314acad131ed11d981fd4fabde5",
+  "native_source_sha256": {
+    "code/engine/trainer.py": "7a3d913052f746e874caee75cde701ac82289b44089426da5543d167dbc29cf4",
+    "code/engine/optimizer.py": "b381e8894a94737dfabe2e4ba06cf8b3ff65c58cc1287b0252fa4969a39f95f5",
+    "code/model/vision_transformer.py": "2e563c580029600ca2dfa539cb7ec48eb643d4d52c8ff76349931199e6ce9434",
+    "code/model/lora.py": "3e4df30447e8600e9e204a3ec977de3b6ef286d4f33f8d3455b51faf4ee4625e",
+    "code/data/dataset/vtab_processed.py": "ab0c6ae22a79dc602712e9551f344c1be4863a0f0d93177fe0b6c6c90f56a3d1"
+  },
+  "split_sha256": {
+    "train800.txt": "ed2992f2123ec110df4f87d82e8c5870c55579c7781b31a90d44a010f6c6f384",
+    "val200.txt": "a6784cf149fb49843b4ff8b5c6a3f19f3a07eceec2996da09ef078c4af60e4ec"
+  },
+  "weights_manifest": {
+    "phase": "complete",
+    "source_url": "https://storage.googleapis.com/vit_models/imagenet21k/ViT-B_16.npz",
+    "path": "code/pretrained_weights/ViT-B_16_in21k.npz",
+    "etag": "\"d9715d3bf39e807337a3c3e117756738\"",
+    "source_md5_header": "crc32c=G9tFjQ==",
+    "bytes": 412815506,
+    "sha256": "ac7478131e1b77e5c2f0225849730bd19ee89cfffe600c2dfd2272b34a50a43d",
+    "elapsed_seconds": 35.8,
+    "checksum_scope": "Locally computed SHA-256, not an independently published author checksum",
+    "source_etag_md5_verified": true
+  },
+  "frozen_backbone_sha256": "e290876c1e65a2e87f99309adedae3d1bf015ba66e2e9a686c6befb1ddec5945",
+  "classifier_initial_sha256": "0293216d6e6d1fc5d0d2a2ab03ec8bc6d8a37739c7381f7e954351a5e9f8659a",
+  "initial_resources": {
+    "cgroup_limit_bytes": 17179869184,
+    "cgroup_used_bytes": 14604378112,
+    "inactive_file_bytes": 951283712,
+    "conservative_headroom_gib": 3.284564971923828,
+    "oom_kill_count": 138,
+    "gpu_used_mib": 4,
+    "gpu_total_mib": 81920,
+    "gpu_utilization_percent": 0
+  },
+  "protocol_differences": [
+    "Fixed single configuration, no hyperparameter search and no final train+validation fit",
+    "Python 3.10 instead of the setup script's Python 3.7",
+    "Zero data-loader workers and no pinned CPU memory",
+    "Validation batch size 64 instead of 512",
+    "Validation recorded after every epoch, fixed 100-epoch budget without early stopping",
+    "Classifier reset with its own seed and independently seeded per-epoch sampler",
+    "Native train_one_epoch, forward_one_batch, optimizer and cosine scheduler are reused",
+    "Best validation is supplementary, primary comparison uses the last epoch"
+  ]
+}

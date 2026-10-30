@@ -1,0 +1,446 @@
+{
+  "scope": "Linear, LoRA and SSF, seed 42, epoch 100",
+  "notebook": "notebooks/01_flowers102_checkpoint1.ipynb",
+  "artifacts": [
+    {
+      "file": "tables/dataset-summary.csv",
+      "notebook_section": "Dataset",
+      "caption": "Jumlah gambar dan cakupan kelas pada training dan validation.",
+      "interpretation_limit": "Kelas tanpa sampel validation tidak dapat dinilai.",
+      "source": "Verified split manifests",
+      "sha256": "81b1c98e5a7a9d7b3301870eb4fadebd2516be2cb8937ffd110819b1dbfe73ea"
+    },
+    {
+      "file": "figures/dataset-examples.png",
+      "notebook_section": "Dataset",
+      "caption": "Delapan contoh dari kelas training yang berbeda.",
+      "interpretation_limit": "Foto ilustratif, dengan padding putih untuk panel.",
+      "source": "Oxford Flowers102 via pinned XiN0919/VTAB-1k mirror",
+      "sha256": "36649c80d2cf5f1fcec928d1e8eacbb0bc3a5c8443bad57d8ac0ebd54564ccab"
+    },
+    {
+      "file": "figures/dataset-examples.svg",
+      "notebook_section": "Dataset",
+      "caption": "Delapan contoh dari kelas training yang berbeda.",
+      "interpretation_limit": "Foto ilustratif, dengan padding putih untuk panel.",
+      "source": "Oxford Flowers102 via pinned XiN0919/VTAB-1k mirror",
+      "sha256": "2044daa3740716ea1e987eeea2396d2ff9a2bd389f3ed824e0c190332d794f1d"
+    },
+    {
+      "file": "figures/class-coverage.png",
+      "notebook_section": "Dataset",
+      "caption": "Cakupan kelas serta distribusi jumlah gambar per kelas.",
+      "interpretation_limit": "Distribusi validation tidak menguji semua 102 kelas.",
+      "source": "dataset_audit.json and train/validation row manifests",
+      "sha256": "71db91b345dcb5d26a87e98ae0f3259458cc5965f799398feec426e7277ba8d0"
+    },
+    {
+      "file": "figures/class-coverage.svg",
+      "notebook_section": "Dataset",
+      "caption": "Cakupan kelas serta distribusi jumlah gambar per kelas.",
+      "interpretation_limit": "Distribusi validation tidak menguji semua 102 kelas.",
+      "source": "dataset_audit.json and train/validation row manifests",
+      "sha256": "0affe3c7b2eddb8bbb8e1b40abdb33645724221a66f47be8cec47c07457c93e2"
+    },
+    {
+      "file": "figures/vit-backbone.png",
+      "notebook_section": "Metodologi & Eksperimen",
+      "caption": "Alur gambar, embedding patch, Transformer dan classifier pada ViT-B/16.",
+      "interpretation_limit": "Diagram merangkum alur utama.",
+      "source": "Pinned upstream ViT-B/16 architecture and image transform",
+      "sha256": "4b99ca52451999e7bbbeeb30bec2c25098f3bab7a504a2f8d80ee7a39a38df4e"
+    },
+    {
+      "file": "figures/vit-backbone.svg",
+      "notebook_section": "Metodologi & Eksperimen",
+      "caption": "Alur gambar, embedding patch, Transformer dan classifier pada ViT-B/16.",
+      "interpretation_limit": "Diagram merangkum alur utama.",
+      "source": "Pinned upstream ViT-B/16 architecture and image transform",
+      "sha256": "02afe9685dee8faefdbbd7ebec1b27a104b7fb488691aee35581acf50b18fa71"
+    },
+    {
+      "file": "figures/method-diagram.png",
+      "notebook_section": "Metodologi & Eksperimen",
+      "caption": "Perbedaan parameter frozen dan trainable pada tiga metode.",
+      "interpretation_limit": "Skema mengikuti implementasi native.",
+      "source": "Pinned model/lora.py, model/ssf.py and parameter boundaries",
+      "sha256": "d12e25ea1e472e79e97b47656d1efdfac54124a17ceaff0588e8706314e1ff8e"
+    },
+    {
+      "file": "figures/method-diagram.svg",
+      "notebook_section": "Metodologi & Eksperimen",
+      "caption": "Perbedaan parameter frozen dan trainable pada tiga metode.",
+      "interpretation_limit": "Skema mengikuti implementasi native.",
+      "source": "Pinned model/lora.py, model/ssf.py and parameter boundaries",
+      "sha256": "2da2fbacbc926f97fe3bfe8c0e48ed2097bf89255cb64eec11f9ac3b89fa6c72"
+    },
+    {
+      "file": "figures/experiment-flow.png",
+      "notebook_section": "Metodologi & Eksperimen",
+      "caption": "Urutan persiapan data, training dan analisis validation epoch 100.",
+      "interpretation_limit": "Tidak mencakup hyperparameter search, retraining trainval atau evaluasi test.",
+      "source": "results/checkpoint1: stored epoch-100 results, histories and logits",
+      "sha256": "1bc379e4b52680445c9e41bfb9fd1e60f4bae286ff9229e6758521487dc33a8c"
+    },
+    {
+      "file": "figures/experiment-flow.svg",
+      "notebook_section": "Metodologi & Eksperimen",
+      "caption": "Urutan persiapan data, training dan analisis validation epoch 100.",
+      "interpretation_limit": "Tidak mencakup hyperparameter search, retraining trainval atau evaluasi test.",
+      "source": "results/checkpoint1: stored epoch-100 results, histories and logits",
+      "sha256": "797cb9eccc4aba90bfe80c7d383ceaded7c725f2938cbdc229b90393dd40f20f"
+    },
+    {
+      "file": "tables/configuration-decisions.csv",
+      "notebook_section": "Metodologi & Eksperimen",
+      "caption": "Konfigurasi aktual, sumber pemilihan dan konsekuensinya.",
+      "interpretation_limit": "Pilihan dari grid belum menjadi hasil tuning optimum.",
+      "source": "Run configs, pinned upstream source and Mai et al. Appendix A",
+      "sha256": "de8e17f3d0178f81762a307c260778bdf91ecd110ceab076982481e17533032a"
+    },
+    {
+      "file": "tables/paper-comparison.csv",
+      "notebook_section": "Metodologi & Eksperimen",
+      "caption": "Perbedaan protokol paper dan eksperimen checkpoint.",
+      "interpretation_limit": "Validation checkpoint tidak langsung sebanding dengan hasil test paper.",
+      "source": "Mai et al. sections 3\u20134 and Appendix A/C",
+      "sha256": "7686bded518a7abc77850581381644cd452a9371e32fad07017a0d3307d00ae9"
+    },
+    {
+      "file": "tables/provenance-checks.csv",
+      "notebook_section": "Metodologi & Eksperimen",
+      "caption": "Hash inisialisasi tercatat, kesamaan urutan target dan selisih logits setelah reload.",
+      "interpretation_limit": "Hash backbone berasal dari pemeriksaan runner saat training.",
+      "source": "Original result/provenance JSON and validation_last_reloaded.npz",
+      "sha256": "84214257529ac297d3dc838d47fe97cc205be78faa6d3bf04b9d616b6d386f02"
+    },
+    {
+      "file": "tables/method-metrics.csv",
+      "notebook_section": "Hasil & Evaluasi",
+      "caption": "Metrik epoch 100, parameter terlatih dan catatan runtime.",
+      "interpretation_limit": "Satu seed dan satu split. Catatan resource bukan benchmark efisiensi terkontrol.",
+      "source": "results/checkpoint1/{linear,lora,ssf}/: result.json, history.csv and validation_last.npz",
+      "sha256": "684391a4cd52ea705b2b79d407a3ff095bd00401a357ff0b56bb805fc5de88b3"
+    },
+    {
+      "file": "figures/learning-curves.png",
+      "notebook_section": "Hasil & Evaluasi",
+      "caption": "Dinamika training dan validation untuk tiga metode.",
+      "interpretation_limit": "Loss pada history dibulatkan dua desimal oleh runner.",
+      "source": "Stored history.csv for all three methods",
+      "sha256": "7a29b0066565147c949158e1db7f7f4d0d6a6f6fce0368b22864ff9b9b66d864"
+    },
+    {
+      "file": "figures/learning-curves.svg",
+      "notebook_section": "Hasil & Evaluasi",
+      "caption": "Dinamika training dan validation untuk tiga metode.",
+      "interpretation_limit": "Loss pada history dibulatkan dua desimal oleh runner.",
+      "source": "Stored history.csv for all three methods",
+      "sha256": "525675c47efc6c5b597488f3df51cf4670efa5bb9dd2acffffc4ec7d22ffb45b"
+    },
+    {
+      "file": "figures/parameter-counts.png",
+      "notebook_section": "Hasil & Evaluasi",
+      "caption": "Parameter classifier dan parameter metode yang dilatih.",
+      "interpretation_limit": "Parameter count tidak mengukur FLOPs atau latency.",
+      "source": "results/checkpoint1: stored epoch-100 results, histories and logits",
+      "sha256": "e73e2b4b1a32b7fcc227487eeb4a76e6c490371771e9920872ae24611f7a1550"
+    },
+    {
+      "file": "figures/parameter-counts.svg",
+      "notebook_section": "Hasil & Evaluasi",
+      "caption": "Parameter classifier dan parameter metode yang dilatih.",
+      "interpretation_limit": "Parameter count tidak mengukur FLOPs atau latency.",
+      "source": "results/checkpoint1: stored epoch-100 results, histories and logits",
+      "sha256": "8d8a19271a692ec069d1087a70ddd301ebe122ec730d88a30ec476c1eac8d495"
+    },
+    {
+      "file": "figures/final-accuracy.png",
+      "notebook_section": "Hasil & Evaluasi",
+      "caption": "Accuracy epoch 100 beserta interval Wilson 95%.",
+      "interpretation_limit": "Interval tidak mencakup variasi seed atau split.",
+      "source": "results/checkpoint1: stored epoch-100 results, histories and logits",
+      "sha256": "6afaa4c92988dca5dd9ea973b03acc99f2180286bebb6ca3f97cd143094756a9"
+    },
+    {
+      "file": "figures/final-accuracy.svg",
+      "notebook_section": "Hasil & Evaluasi",
+      "caption": "Accuracy epoch 100 beserta interval Wilson 95%.",
+      "interpretation_limit": "Interval tidak mencakup variasi seed atau split.",
+      "source": "results/checkpoint1: stored epoch-100 results, histories and logits",
+      "sha256": "a77e4f4829f6ca25ac5e27f91d034ad0d4ff31c56e6bfb58e5697a0a34ad37bf"
+    },
+    {
+      "file": "figures/probability-quality.png",
+      "notebook_section": "Hasil & Evaluasi",
+      "caption": "Perbedaan NLL dan multiclass Brier pada accuracy yang sama.",
+      "interpretation_limit": "Proper scores tidak mengukur kalibrasi saja.",
+      "source": "results/checkpoint1: stored epoch-100 results, histories and logits",
+      "sha256": "9ba2adb78295f6072e68125f2dc2e618a4d676e93a110418f0c3aefc4bdf7964"
+    },
+    {
+      "file": "figures/probability-quality.svg",
+      "notebook_section": "Hasil & Evaluasi",
+      "caption": "Perbedaan NLL dan multiclass Brier pada accuracy yang sama.",
+      "interpretation_limit": "Proper scores tidak mengukur kalibrasi saja.",
+      "source": "results/checkpoint1: stored epoch-100 results, histories and logits",
+      "sha256": "e18ef7ea1057a667b1ca20384cf688bdcf743e49c6a4e51304dbdc5832add777"
+    },
+    {
+      "file": "tables/reliability-bins.csv",
+      "notebook_section": "Hasil & Evaluasi",
+      "caption": "Confidence, accuracy, jumlah sampel dan interval Wilson dalam lima bin.",
+      "interpretation_limit": "Bin kecil memiliki ketidakpastian besar. Bin kosong memiliki nilai tidak tersedia.",
+      "source": "results/checkpoint1/{linear,lora,ssf}/: result.json, history.csv and validation_last.npz",
+      "sha256": "a270d05013791c16158d65a85645211b3cffb29297fc02d02ff336b934c9ee04"
+    },
+    {
+      "file": "figures/reliability.png",
+      "notebook_section": "Hasil & Evaluasi",
+      "caption": "Reliability plot dengan dukungan sampel per bin.",
+      "interpretation_limit": "Top-label calibration pada validation terbatas, tanpa fitting kalibrasi.",
+      "source": "results/checkpoint1: stored epoch-100 results, histories and logits",
+      "sha256": "a6619cd2f90392c89685e4f8f873b28f3e4b239b89629bba0682b17580946c71"
+    },
+    {
+      "file": "figures/reliability.svg",
+      "notebook_section": "Hasil & Evaluasi",
+      "caption": "Reliability plot dengan dukungan sampel per bin.",
+      "interpretation_limit": "Top-label calibration pada validation terbatas, tanpa fitting kalibrasi.",
+      "source": "results/checkpoint1: stored epoch-100 results, histories and logits",
+      "sha256": "8fc2b35fe1000c56582c19cec81f431107f075e79453289dd8273f19254bbf3a"
+    },
+    {
+      "file": "tables/paired-nll-bootstrap.csv",
+      "notebook_section": "Hasil & Evaluasi",
+      "caption": "Paired bootstrap selisih NLL dengan 10.000 resampling gambar.",
+      "interpretation_limit": "Tidak mencakup variasi seed training atau split baru.",
+      "source": "results/checkpoint1/{linear,lora,ssf}/: result.json, history.csv and validation_last.npz",
+      "sha256": "62fac19644a155ac8b2e19ae8998895f21e49253d4fd03a31db6f2d9f57644fe"
+    },
+    {
+      "file": "tables/class-recall.csv",
+      "notebook_section": "Hasil & Evaluasi",
+      "caption": "Support training/validation dan recall setiap kelas pada tiga metode.",
+      "interpretation_limit": "Macro recall hanya mencakup kelas dengan support validation lebih besar dari nol.",
+      "source": "results/checkpoint1/{linear,lora,ssf}/: result.json, history.csv and validation_last.npz",
+      "sha256": "eef36ddd22f7f5c46faddc3aaa760334b0cbb8b502abfd46b6094765a2366fa4"
+    },
+    {
+      "file": "tables/prediction-disagreement.csv",
+      "notebook_section": "Diskusi",
+      "caption": "Jumlah kelas prediksi berbeda per pasangan.",
+      "interpretation_limit": "Hitungan deskriptif dari validation yang sama.",
+      "source": "results/checkpoint1/{linear,lora,ssf}/: result.json, history.csv and validation_last.npz",
+      "sha256": "5fbb97bb1f01f1612f0cf888fa7e2e01e3479df200239fcf27d79e5db2a81650"
+    },
+    {
+      "file": "tables/shared-errors.csv",
+      "notebook_section": "Diskusi",
+      "caption": "Jumlah gambar yang salah pada kedua metode.",
+      "interpretation_limit": "Hitungan deskriptif dari validation yang sama.",
+      "source": "results/checkpoint1/{linear,lora,ssf}/: result.json, history.csv and validation_last.npz",
+      "sha256": "7bbd24de2e5a406ef907e44cd11ed1199df6f2675c1efc85cc69bd2cde009fe3"
+    },
+    {
+      "file": "tables/pairwise-comparison.csv",
+      "notebook_section": "Diskusi",
+      "caption": "Perbandingan disagreement dan error per pasangan.",
+      "interpretation_limit": "Error berbeda tidak menjamin peningkatan pada data baru.",
+      "source": "results/checkpoint1/{linear,lora,ssf}/: result.json, history.csv and validation_last.npz",
+      "sha256": "016987fd84fe2d281088e5e087b444594dd6d9d206e07b1bc7143c642e043fd0"
+    },
+    {
+      "file": "figures/prediction-comparison.png",
+      "notebook_section": "Diskusi",
+      "caption": "Disagreement prediksi dan overlap error.",
+      "interpretation_limit": "Tidak membuktikan perbedaan inductive bias secara kausal.",
+      "source": "results/checkpoint1: stored epoch-100 results, histories and logits",
+      "sha256": "e0d09f0a2b90cd46f4cc1deeed5e75f4d6f1c249c93c5293334490ae19eb0e88"
+    },
+    {
+      "file": "figures/prediction-comparison.svg",
+      "notebook_section": "Diskusi",
+      "caption": "Disagreement prediksi dan overlap error.",
+      "interpretation_limit": "Tidak membuktikan perbedaan inductive bias secara kausal.",
+      "source": "results/checkpoint1: stored epoch-100 results, histories and logits",
+      "sha256": "bdd961e141a8d64b584b3ec1011dc2f37f65b395b7a67cd917c2c4f54500d7bf"
+    },
+    {
+      "file": "tables/validation-error-cases.csv",
+      "notebook_section": "Diskusi",
+      "caption": "Semua error unik dengan label aktual, prediksi, confidence dan support kelas.",
+      "interpretation_limit": "Label merupakan indeks kelas dataset.",
+      "source": "Original photos and validation_last.npz",
+      "sha256": "6431f61250e3e17b0fea291b0edac2a86ce92fae8da189137aced7deecca824a"
+    },
+    {
+      "file": "figures/validation-errors.png",
+      "notebook_section": "Diskusi",
+      "caption": "Lima foto yang salah pada setidaknya satu metode.",
+      "interpretation_limit": "Panel tidak membuktikan penyebab kesalahan.",
+      "source": "Oxford Flowers102 and verified validation logits",
+      "sha256": "42d2f8d34a1d4f5be8651c8bb69dd56fd6c2807c2ca9fa27e7e8befbd16debc9"
+    },
+    {
+      "file": "figures/validation-errors.svg",
+      "notebook_section": "Diskusi",
+      "caption": "Lima foto yang salah pada setidaknya satu metode.",
+      "interpretation_limit": "Panel tidak membuktikan penyebab kesalahan.",
+      "source": "Oxford Flowers102 and verified validation logits",
+      "sha256": "6a7226db521d6233e351c36286bfad491e265f12cb2d115b2b5fcfa726398a7c"
+    },
+    {
+      "file": "figures/error-row-008.png",
+      "notebook_section": "Diskusi",
+      "caption": "Validation baris 8: label dan prediksi tiga metode.",
+      "interpretation_limit": "Confidence kelas prediksi.",
+      "source": "Oxford Flowers102 and validation logits",
+      "sha256": "4b7c9097a2a8c35d501d72d32e5b9b679100df3a704f9ff56c5d653ea51b8120"
+    },
+    {
+      "file": "figures/error-row-008.svg",
+      "notebook_section": "Diskusi",
+      "caption": "Validation baris 8: label dan prediksi tiga metode.",
+      "interpretation_limit": "Confidence kelas prediksi.",
+      "source": "Oxford Flowers102 and validation logits",
+      "sha256": "dfc633e775ac593d9a638adfff9beb005c78e43f129b5e4e36e6ebae4143fe5a"
+    },
+    {
+      "file": "figures/error-row-040.png",
+      "notebook_section": "Diskusi",
+      "caption": "Validation baris 40: label dan prediksi tiga metode.",
+      "interpretation_limit": "Confidence kelas prediksi.",
+      "source": "Oxford Flowers102 and validation logits",
+      "sha256": "3eee2dbd585d01eef7d67fff3b27910daf36d32401ed8b3a8adac2e618284170"
+    },
+    {
+      "file": "figures/error-row-040.svg",
+      "notebook_section": "Diskusi",
+      "caption": "Validation baris 40: label dan prediksi tiga metode.",
+      "interpretation_limit": "Confidence kelas prediksi.",
+      "source": "Oxford Flowers102 and validation logits",
+      "sha256": "941820fa4289d2b65f1a94916cd455da68a75740111d037278b02cb828975e4f"
+    },
+    {
+      "file": "figures/error-row-084.png",
+      "notebook_section": "Diskusi",
+      "caption": "Validation baris 84: label dan prediksi tiga metode.",
+      "interpretation_limit": "Confidence kelas prediksi.",
+      "source": "Oxford Flowers102 and validation logits",
+      "sha256": "7f6d1a76dec6853e7689674c700ccedc35ff04ddab13c3dce8d647be2c66c4eb"
+    },
+    {
+      "file": "figures/error-row-084.svg",
+      "notebook_section": "Diskusi",
+      "caption": "Validation baris 84: label dan prediksi tiga metode.",
+      "interpretation_limit": "Confidence kelas prediksi.",
+      "source": "Oxford Flowers102 and validation logits",
+      "sha256": "505bead9723aafd4f515261f22df4b6585b8ecb53583f5bdb532225b9fc4e232"
+    },
+    {
+      "file": "figures/error-row-097.png",
+      "notebook_section": "Diskusi",
+      "caption": "Validation baris 97: label dan prediksi tiga metode.",
+      "interpretation_limit": "Confidence kelas prediksi.",
+      "source": "Oxford Flowers102 and validation logits",
+      "sha256": "5cd756b02576b40e28f98b066020a6f78aa44d1fdeb55f5c981214f8cfd3b620"
+    },
+    {
+      "file": "figures/error-row-097.svg",
+      "notebook_section": "Diskusi",
+      "caption": "Validation baris 97: label dan prediksi tiga metode.",
+      "interpretation_limit": "Confidence kelas prediksi.",
+      "source": "Oxford Flowers102 and validation logits",
+      "sha256": "cb2d4c2aa1bf38b706069bb15ab4e7826f055012001e8247b88c0d20164ccbbb"
+    },
+    {
+      "file": "figures/error-row-126.png",
+      "notebook_section": "Diskusi",
+      "caption": "Validation baris 126: label dan prediksi tiga metode.",
+      "interpretation_limit": "Confidence kelas prediksi.",
+      "source": "Oxford Flowers102 and validation logits",
+      "sha256": "96f0a4956d504ff989829a3977fb7c4b0083842d9d6d16be7404e9ab16be466c"
+    },
+    {
+      "file": "figures/error-row-126.svg",
+      "notebook_section": "Diskusi",
+      "caption": "Validation baris 126: label dan prediksi tiga metode.",
+      "interpretation_limit": "Confidence kelas prediksi.",
+      "source": "Oxford Flowers102 and validation logits",
+      "sha256": "29c946c83a3215103adcfa3661cab522d564fb912641357e43ecadba30c3aaaf"
+    },
+    {
+      "file": "tables/exploratory-ensembles.csv",
+      "notebook_section": "Diskusi",
+      "caption": "Empat kombinasi anggota dibandingkan dengan mean probabilitas dan mean logits.",
+      "interpretation_limit": "Delapan hasil eksplorasi pada validation yang sudah dianalisis.",
+      "source": "results/checkpoint1/{linear,lora,ssf}/: result.json, history.csv and validation_last.npz",
+      "sha256": "2e9da77b15298d80e1f9a2f5bd3fa1cf698b5ee9bc4701fbd49b5347afb02b5d"
+    },
+    {
+      "file": "figures/exploratory-ensembles.png",
+      "notebook_section": "Diskusi",
+      "caption": "Accuracy dan NLL dari dua aturan agregasi.",
+      "interpretation_limit": "Tidak ada pemilihan bobot atau hasil test independen.",
+      "source": "results/checkpoint1: stored epoch-100 results, histories and logits",
+      "sha256": "94fd76dd39d407d1d2ae2df38f0a5b09ed5fa3c717038fe7bf0f93c389545687"
+    },
+    {
+      "file": "figures/exploratory-ensembles.svg",
+      "notebook_section": "Diskusi",
+      "caption": "Accuracy dan NLL dari dua aturan agregasi.",
+      "interpretation_limit": "Tidak ada pemilihan bobot atau hasil test independen.",
+      "source": "results/checkpoint1: stored epoch-100 results, histories and logits",
+      "sha256": "0ab324db82e85877243e207c7b6355a017b4c1d04d1e614b3382b7cb4f433644"
+    },
+    {
+      "file": "tables/paper-findings.csv",
+      "notebook_section": "Diskusi",
+      "caption": "Hubungan temuan paper dan bukti checkpoint.",
+      "interpretation_limit": "Kesesuaian lokal belum mereplikasi seluruh kesimpulan paper.",
+      "source": "Mai et al. sections 3\u20137 and current results",
+      "sha256": "be2ed7abdbe36aefe8d7c7436743f9a659488deda3ddf641ab3ab5e8df490bdb"
+    },
+    {
+      "file": "tables/observed-resources.csv",
+      "notebook_section": "Diskusi",
+      "caption": "Total durasi epoch, rata-rata per epoch dan peak memory yang tercatat.",
+      "interpretation_limit": "Pengukuran bukan wall-clock seluruh proses dan kondisi node tidak terkontrol.",
+      "source": "results/checkpoint1/{linear,lora,ssf}/: result.json, history.csv and validation_last.npz",
+      "sha256": "e4e8ea583ad38622eb11686bb43eb5bd4f3a4f68cc1c55f14d6077c9f5f0f10e"
+    },
+    {
+      "file": "figures/research-directions.png",
+      "notebook_section": "Future Works",
+      "caption": "Mekanisme tiga usulan eksperimen lanjutan.",
+      "interpretation_limit": "Tidak ada hasil evaluasi gate, noise weighting atau resource selector.",
+      "source": "Current validation evidence and cited related work",
+      "sha256": "c8090e7d3cba2137ae66fbb612a8d2450f53f614286952444b8fe8625cbbd95d"
+    },
+    {
+      "file": "figures/research-directions.svg",
+      "notebook_section": "Future Works",
+      "caption": "Mekanisme tiga usulan eksperimen lanjutan.",
+      "interpretation_limit": "Tidak ada hasil evaluasi gate, noise weighting atau resource selector.",
+      "source": "Current validation evidence and cited related work",
+      "sha256": "c1dc824abadd98b0bfbb77232f0df2087286b78186779e5eaf3a067d6105fb58"
+    },
+    {
+      "file": "tables/research-directions.csv",
+      "notebook_section": "Future Works",
+      "caption": "Mekanisme, pembanding dan metrik usulan eksperimen.",
+      "interpretation_limit": "Usulan belum dilatih atau dievaluasi.",
+      "source": "Current evidence and docs/RESEARCH_DIRECTIONS.md",
+      "sha256": "a93f75d0a08af2e670d1fd875014c9ac8c9c907728547e4b7ca934103e78eee0"
+    },
+    {
+      "file": "tables/references.csv",
+      "notebook_section": "Output",
+      "caption": "Sumber paper, kode dan dataset beserta lingkup pembacaan.",
+      "interpretation_limit": "Tidak semua full text pembanding telah ditelaah.",
+      "source": "Primary sources and verified metadata",
+      "sha256": "d8841bf7e8f4cbbfe165063153cce5c9f4a362407a398a1bdf40adfe22df5a0a"
+    }
+  ]
+}

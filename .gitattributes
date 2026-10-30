@@ -1,0 +1,8 @@
+*.pdf binary
+*.zip binary
+*.png binary
+*.jpg binary
+*.npz binary
+*.svg text eol=lf
+*.ipynb text eol=lf
+*.csv text eol=lf

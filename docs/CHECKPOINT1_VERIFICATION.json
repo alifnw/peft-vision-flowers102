@@ -1,0 +1,207 @@
+{
+  "clean_checkout_cpu_execution": true,
+  "pytorch_not_imported": true,
+  "notebook_code_cells": 20,
+  "cpu_unit_tests_passed": 15,
+  "shell_syntax_checks_passed": true,
+  "raw_artifacts_unchanged": true,
+  "methods": {
+    "linear": {
+      "correct": 198,
+      "nll": 0.1162008802366727,
+      "brier_multiclass_sum": 0.03572368951523514,
+      "wrong_rows_one_based": [
+        40,
+        126
+      ]
+    },
+    "lora": {
+      "correct": 198,
+      "nll": 0.040994915671484604,
+      "brier_multiclass_sum": 0.013730653923054267,
+      "wrong_rows_one_based": [
+        8,
+        97
+      ]
+    },
+    "ssf": {
+      "correct": 198,
+      "nll": 0.03558224031603427,
+      "brier_multiclass_sum": 0.013453019096713753,
+      "wrong_rows_one_based": [
+        8,
+        84
+      ]
+    }
+  },
+  "validation_rows": 200,
+  "model_output_classes": 102,
+  "validation_classes_observed": 90,
+  "ensemble_results": [
+    {
+      "aggregation": "probability_mean",
+      "ensemble": "Linear + LoRA",
+      "correct": 200,
+      "nll": 0.0734310439
+    },
+    {
+      "aggregation": "probability_mean",
+      "ensemble": "Linear + SSF",
+      "correct": 199,
+      "nll": 0.06974389868
+    },
+    {
+      "aggregation": "probability_mean",
+      "ensemble": "LoRA + SSF",
+      "correct": 199,
+      "nll": 0.03779541713
+    },
+    {
+      "aggregation": "probability_mean",
+      "ensemble": "Linear + LoRA + SSF",
+      "correct": 199,
+      "nll": 0.05921846737
+    },
+    {
+      "aggregation": "logit_mean",
+      "ensemble": "Linear + LoRA",
+      "correct": 200,
+      "nll": 0.05613822107
+    },
+    {
+      "aggregation": "logit_mean",
+      "ensemble": "Linear + SSF",
+      "correct": 199,
+      "nll": 0.05000909508
+    },
+    {
+      "aggregation": "logit_mean",
+      "ensemble": "LoRA + SSF",
+      "correct": 199,
+      "nll": 0.03438550631
+    },
+    {
+      "aggregation": "logit_mean",
+      "ensemble": "Linear + LoRA + SSF",
+      "correct": 199,
+      "nll": 0.0428813082
+    }
+  ],
+  "paired_nll_bootstrap": [
+    {
+      "method_a": "LoRA",
+      "method_b": "Linear",
+      "delta_nll_a_minus_b": -0.07520596457,
+      "ci95_low": -0.1033003517,
+      "ci95_high": -0.04920947638,
+      "n": 200,
+      "resamples": 10000,
+      "analysis_seed": 42
+    },
+    {
+      "method_a": "SSF",
+      "method_b": "Linear",
+      "delta_nll_a_minus_b": -0.08061863992,
+      "ci95_low": -0.1109112782,
+      "ci95_high": -0.0511418726,
+      "n": 200,
+      "resamples": 10000,
+      "analysis_seed": 42
+    },
+    {
+      "method_a": "SSF",
+      "method_b": "LoRA",
+      "delta_nll_a_minus_b": -0.005412675355,
+      "ci95_low": -0.0139008339,
+      "ci95_high": 0.003545134845,
+      "n": 200,
+      "resamples": 10000,
+      "analysis_seed": 42
+    }
+  ],
+  "python": "3.11.15",
+  "packages": {
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "matplotlib": "3.11.2",
+    "scipy": "1.17.1",
+    "Pillow": "12.3.0",
+    "nbformat": "5.11.1",
+    "nbclient": "0.11.0"
+  },
+  "source_checkout_initially_clean": true,
+  "no_implicit_dataframe_outputs": true,
+  "ensemble_aggregation_comparison_verified": true,
+  "notebook_code_cells_sha256": "c07acb4c40c78262f8cf229f01a08a95722cee62d2a73e4f778b37ecdf6dcc95",
+  "verified_at_utc": "2026-10-30T11:59:55.823016+00:00",
+  "scope": "Flowers102: Linear, LoRA and SSF, seed 42, epoch 100, reused validation",
+  "group": 1,
+  "members": [
+    "Alif Negifta Wibawaputra",
+    "Charleen Samaeri Gulo"
+  ],
+  "asset_count": 55,
+  "asset_formats": {
+    "png": 19,
+    "svg": 19,
+    "csv": 17
+  },
+  "photo_hashes_verified": 13,
+  "new_training_started": false,
+  "independent_test_evaluation": false,
+  "training_runner_check_scope": "CPU CLI and initialization-reference tests. GPU training was not repeated.",
+  "notebook_sha256": "7f6737df3eae4b11ae2c5922bb6d5da6ea99e8fe3068eb6c85824d502d74e8fd",
+  "input_code_sha256": {
+    "configs/flowers102_stage3.json": "cf72cf3f8a439a311d765835b650592ebca42ec1fd37822b38eecf3c859332de",
+    "configs/flowers102_stage3_microbatch8.json": "3748ae50180dae2ff193c4b4a305cb17e0fe1184cae384406f575ab45f66097b",
+    "configs/flowers102_ssf.json": "d9b13ad84c5d18a68957f07f29cc5a6abd7924dd5881e9fd7965836fd868fedd",
+    "scripts/checkpoint_analysis.py": "16116447a96c73bb58f9deba8ab56291120f336633e4861f033c64d8ba24bdae",
+    "scripts/checkpoint_figures.py": "e8497d9b3f263e02988f573c686c335b726c66e88a16649f1d3e039865698fd9",
+    "scripts/train_validation.py": "33cc8c2ff4c6b4a16ce738a5dc06cf268d3ea7083cc2261c63fc4636bf8dd6c3",
+    "scripts/initialization_reference.py": "f76fc1e1bb8fa0b53a10ed33c03f8f76a3f31368185dda94f4930878e730538b",
+    "scripts/gradient_accumulation.py": "e1783cf4ce9b1cdd86e1fd949b07df20e0e048cb422a1f56569a994e26f3be3a",
+    "scripts/peft_methods.py": "60e9541616a49ac5879ce78488959fda545c29d60717ccad7da208abb1852508",
+    "scripts/resource_guard.py": "095e7be12839861e1ff2e2ecaafc6da548d00a0bd027b8cddfede506ee610671",
+    "scripts/smoke_test.py": "d987b83f850876e4b2f6863be5b7f60955139314acad131ed11d981fd4fabde5",
+    "scripts/prepare_weights.py": "a79fc02d3c2cd21f87ac0eda77a424c9bd5c648ef119519b93b13517e55a2788",
+    "scripts/prepare_vtab.py": "ea70fa3cd9ab183e9dcc09ca48fa5bc338d9beeca06a36f6a8e22b1efa477ffe",
+    "scripts/setup_training.sh": "9482a110faa7ef37b179c79a424a335567dd39cad87abd5c72d24b3979730191",
+    "scripts/get_upstream.sh": "4af8abd3a2b00f8988debeef9e3743e777dae11d324f59afad6d500bffd937e4",
+    "scripts/smoke_training.sh": "de47ad8d11aa4db429fc46a9a326feb57b6c72b5f6f9dd6a1886a8654282d49f",
+    "assets/checkpoint1/input/dataset_audit.json": "ef9c7117b0ebcb8b1113abb4e51b310f43f60bf201b1fcdfe36b9fe8cb4a988d",
+    "assets/checkpoint1/input/train_rows.csv": "14d60ef943d5cc3dc19a7b76c47d5367caf2c9820eb68b32a8d513cfd21f1a64",
+    "assets/checkpoint1/input/validation_rows.csv": "c24d60eccfe6a59d28679a62e7ca884ef36ad4cdc3853a58e768c64d1745a22e",
+    "assets/checkpoint1/input/images/train-row-010.jpg": "c39e5930bb379c78b17da8adc524903ccd95750c43331ffa219b495b93433511",
+    "assets/checkpoint1/input/images/train-row-065.jpg": "8f9895c5402334a350660bce67a21833fcb447ced26d4bc0eed05c21b2945591",
+    "assets/checkpoint1/input/images/train-row-090.jpg": "830ff9cced89d86e4724a3264ff9e686312880c1617e9cb4a2065ea774305295",
+    "assets/checkpoint1/input/images/train-row-107.jpg": "49aebba4dec6907ca7c8a21153eb53248298ecfdd9a755a07f16044ba7b619a4",
+    "assets/checkpoint1/input/images/train-row-126.jpg": "64fbb40c265e0575271ace27acd2012bd879180df6ab2a36f1925463234cec1e",
+    "assets/checkpoint1/input/images/train-row-139.jpg": "b0bede4bf0951d1e50fbd026fe09a796a62395980cd007740d424382ee40065b",
+    "assets/checkpoint1/input/images/train-row-177.jpg": "9cdf86f0d6b57e053d6d5489ddcee78c881ffc9310d3e2c59698d11ed4a7dd43",
+    "assets/checkpoint1/input/images/train-row-204.jpg": "2e9d7af1d0a310f65701eda2d68be052494984fc1ce5703b054e696d333be996",
+    "assets/checkpoint1/input/images/validation-row-008.jpg": "3b8a9c03ec4790e8421d59dad3c57683edf4d42956cc1ea63f81ec364db8a028",
+    "assets/checkpoint1/input/images/validation-row-040.jpg": "96925c899c8831a70dae59368b64f82414c451ead5a914b0277550fe97ebb837",
+    "assets/checkpoint1/input/images/validation-row-084.jpg": "7cb4cd4d612a23bd1cc2be7df8e078631505a3b9ba682c096f045fc176a803f4",
+    "assets/checkpoint1/input/images/validation-row-097.jpg": "b40625bb5337b3643e1b9b15c6e63c9ef2b91620da2e23975a2956d0741721fe",
+    "assets/checkpoint1/input/images/validation-row-126.jpg": "e30836c7d40e4bd494fe2d5e3be18e12e4ca6fa9ba3d07ee51a775efaca7b32a",
+    "results/checkpoint1/linear/config.json": "0f5f6c13032a8f6182355c61fd07dcdbe2660eeac01d57465967f2cec778758b",
+    "results/checkpoint1/linear/history.csv": "d33f4eb4acea0a0fc4c1832d575fb9e009186e97d2f64adbcb9c77233521c508",
+    "results/checkpoint1/linear/provenance.json": "9a5e4fb86f5f22daf435b53ef6b66748b307fbb2eb21c6bb1f1c10b102279ea6",
+    "results/checkpoint1/linear/result.json": "015f1887172394ada6cadbf71fb411465eed8baf30f3de4d84414125fce44d04",
+    "results/checkpoint1/linear/validation_best.npz": "2e55c77798fe1a00b733d2f7bd8e9d2e33e7534a38efe825b5635164a9ac4f47",
+    "results/checkpoint1/linear/validation_last.npz": "8409e53cd9b23fb5db346ffae848571acfabc648df525b64b0b0a55d9b1288f3",
+    "results/checkpoint1/linear/validation_last_reloaded.npz": "8409e53cd9b23fb5db346ffae848571acfabc648df525b64b0b0a55d9b1288f3",
+    "results/checkpoint1/lora/config.json": "68176bdfc6d30eb670bd5d60fb0d4d05d2213438f4e72cad786cbfaa9bab3bbd",
+    "results/checkpoint1/lora/history.csv": "9339802bb8df586f26082a2585a12df1ffee97c4fbdbfa6d143a1d8c3b782781",
+    "results/checkpoint1/lora/provenance.json": "8f2595f9d034b3c5aaaa2f82ab455fa9ca825978282c19fe1edd3651cccd327e",
+    "results/checkpoint1/lora/result.json": "0dc902cf1b8851762ea586cb45ca1a2f29bc76dd4ebc5a3c17c8459817021a5a",
+    "results/checkpoint1/lora/validation_best.npz": "403b399ad857f9e864701257dcca6b6ca915ef30bd2c6f3c2b664910d48c6748",
+    "results/checkpoint1/lora/validation_last.npz": "0370f0a78701ce4734746c15f446b15a48c3581dde67e747cb76321152b392af",
+    "results/checkpoint1/lora/validation_last_reloaded.npz": "0370f0a78701ce4734746c15f446b15a48c3581dde67e747cb76321152b392af",
+    "results/checkpoint1/ssf/history.csv": "df48a272ed81c52f178652199f9b81a75bdf7168ed6dcbf3b4c1eb169a4bf6e9",
+    "results/checkpoint1/ssf/provenance.json": "a41868079803a3c345e7688a771bb25c19985e8cc3ee5ede1621af56a7b4a4f8",
+    "results/checkpoint1/ssf/result.json": "adc276cbaf853cc27b6bd897fbc252a9571971914d65120f4592762aeb81dd90",
+    "results/checkpoint1/ssf/validation_last.npz": "a16e68c52c542a509c334a593058df971a87cfbd1fb2c21cf1c16be11ecd91ba",
+    "results/checkpoint1/ssf/validation_last_reloaded.npz": "a16e68c52c542a509c334a593058df971a87cfbd1fb2c21cf1c16be11ecd91ba"
+  }
+}

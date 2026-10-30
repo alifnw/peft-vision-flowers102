@@ -1,0 +1,4 @@
+method_a,method_b,different_predictions,both_wrong,only_a_wrong,only_b_wrong
+Linear,LoRA,4,0,2,2
+Linear,SSF,4,0,2,2
+LoRA,SSF,2,1,1,1

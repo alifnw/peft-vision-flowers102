@@ -1,0 +1,5 @@
+Temuan paper,Bukti checkpoint,Batas
+Metode PEFT yang dituning dapat memiliki accuracy berdekatan,"Linear, LoRA dan SSF sama-sama 198/200 pada konfigurasi tetap","Satu task, satu seed, tanpa tuning atau full fine-tuning"
+Metode berbeda dapat menghasilkan prediksi yang saling melengkapi,Linear–LoRA tidak berbagi error dan mean keduanya benar 200/200,Hanya lima error unik dan validation yang telah diamati
+Ensemble dapat memanfaatkan perbedaan prediksi,"Dua aturan averaging memiliki NLL berbeda, jumlah benar sama",Tidak mereproduksi ensemble seluruh metode pada test paper
+"Many-shot, full fine-tuning dan robustness terhadap distribution shift",Belum diuji,Tidak menjadi klaim hasil checkpoint ini

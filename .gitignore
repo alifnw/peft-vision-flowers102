@@ -1,0 +1,30 @@
+# Python environments and generated files
+.venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.presentation-build/
+.chart-data-*/
+
+# Data, external paper source, and pretrained weights
+/data/
+/code/
+/weights/
+/checkpoints/
+
+# Live training state and outputs
+/runs/
+/outputs/
+/logs/
+/.runtime/
+/manifests/
+*.pt
+*.pt.tmp
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+
+# Generated deliverables
+/deliverables/

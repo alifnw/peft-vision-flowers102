@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="856.8pt" height="589.250109pt" viewBox="0 0 856.8 589.250109" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>PEFT Checkpoint 1</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 589.250109
+L 856.8 589.250109
+L 856.8 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 14.22 173.147444
+L 133.56 173.147444
+L 133.56 131.793608
+L 14.22 131.793608
+z
+" clip-path="url(#p7b28d964b3)" style="fill: #eef1f7; stroke: #465d86; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 182.7 173.147444
+L 323.1 173.147444
+L 323.1 131.793608
+L 182.7 131.793608
+z
+" clip-path="url(#p7b28d964b3)" style="fill: #eef1f7; stroke: #465d86; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 400.32 211.320215
+L 512.64 211.320215
+L 512.64 169.96638
+L 400.32 169.96638
+z
+" clip-path="url(#p7b28d964b3)" style="fill: #eef1f7; stroke: #465d86; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 589.86 211.320215
+L 772.38 211.320215
+L 772.38 169.96638
+L 589.86 169.96638
+z
+" clip-path="url(#p7b28d964b3)" style="fill: #eef1f7; stroke: #465d86; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 589.86 131.793608
+L 772.38 131.793608
+L 772.38 90.439773
+L 589.86 90.439773
+z
+" clip-path="url(#p7b28d964b3)" style="fill: #eef1f7; stroke: #465d86; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #262626" x="73.89" y="155.068573" transform="rotate(-0 73.89 155.068573)">Linear</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #262626" transform="translate(224.785937 149.067206)">Confidence</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #262626" transform="translate(224.870312 161.06994)">terkalibrasi</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #262626" x="456.48" y="193.240954" transform="rotate(-0 456.48 193.240954)">LoRA</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #262626" x="681.12" y="193.241344" transform="rotate(-0 681.12 193.241344)">Fusion probabilitas</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #262626" x="681.12" y="113.714737" transform="rotate(-0 681.12 113.714737)">Terima prediksi Linear</text>
+   </g>
+   <g id="patch_7">
+    <path d="M 136.963312 152.470526
+Q 158.129843 152.470526 178.178341 152.470526
+" style="fill: none; stroke: #555555; stroke-linecap: round"/>
+    <path d="M 174.178341 150.470526
+L 178.178341 152.470526
+L 174.178341 154.470526
+" style="fill: none; stroke: #555555; stroke-linecap: round"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 326.282094 153.382675
+Q 361.710186 171.557007 396.143501 189.221027
+" style="fill: none; stroke: #555555; stroke-linecap: round"/>
+    <path d="M 393.497355 185.615766
+L 396.143501 189.221027
+L 391.671604 189.174788
+" style="fill: none; stroke: #555555; stroke-linecap: round"/>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #262626" x="361.71" y="163.922357" transform="rotate(-0 361.71 163.922357)">kurang yakin</text>
+   </g>
+   <g id="patch_9">
+    <path d="M 516.046911 190.643297
+Q 551.250439 190.643297 585.335932 190.643297
+" style="fill: none; stroke: #555555; stroke-linecap: round"/>
+    <path d="M 581.335932 188.643297
+L 585.335932 190.643297
+L 581.335932 192.643297
+" style="fill: none; stroke: #555555; stroke-linecap: round"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 326.489601 141.109468
+Q 456.479474 126.226806 585.358569 111.471318
+" style="fill: none; stroke: #555555; stroke-linecap: round"/>
+    <path d="M 581.157035 109.93929
+L 585.358569 111.471318
+L 581.612026 113.913329
+" style="fill: none; stroke: #555555; stroke-linecap: round"/>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #262626" x="456.48" y="118.592192" transform="rotate(-0 456.48 118.592192)">yakin</text>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #262626" x="7.2" y="71.715516" transform="rotate(-0 7.2 71.715516)">A. Fusion selektif berdasarkan confidence</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_11">
+    <path d="M 14.22 343.175336
+L 179.19 343.175336
+L 179.19 301.821501
+L 14.22 301.821501
+z
+" clip-path="url(#p3ade64019f)" style="fill: #eef1f7; stroke: #465d86; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 224.82 343.175336
+L 389.79 343.175336
+L 389.79 301.821501
+L 224.82 301.821501
+z
+" clip-path="url(#p3ade64019f)" style="fill: #eef1f7; stroke: #465d86; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 435.42 343.175336
+L 600.39 343.175336
+L 600.39 301.821501
+L 435.42 301.821501
+z
+" clip-path="url(#p3ade64019f)" style="fill: #eef1f7; stroke: #465d86; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 646.02 343.175336
+L 810.99 343.175336
+L 810.99 301.821501
+L 646.02 301.821501
+z
+" clip-path="url(#p3ade64019f)" style="fill: #eef1f7; stroke: #465d86; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #262626" transform="translate(65.969844 319.095098)">Loss sampel</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #262626" transform="translate(77.335469 331.097833)">training</text>
+   </g>
+   <g id="patch_15">
+    <path d="M 182.59344 322.498419
+Q 202.005584 322.498419 220.299694 322.498419
+" style="fill: none; stroke: #555555; stroke-linecap: round"/>
+    <path d="M 216.299694 320.498419
+L 220.299694 322.498419
+L 216.299694 324.498419
+" style="fill: none; stroke: #555555; stroke-linecap: round"/>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #262626" transform="translate(276.447969 319.095098)">Bobot relatif</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #262626" transform="translate(277.302656 331.097833)">dalam kelas</text>
+   </g>
+   <g id="patch_16">
+    <path d="M 393.19344 322.498419
+Q 412.605584 322.498419 430.899694 322.498419
+" style="fill: none; stroke: #555555; stroke-linecap: round"/>
+    <path d="M 426.899694 320.498419
+L 430.899694 322.498419
+L 426.899694 324.498419
+" style="fill: none; stroke: #555555; stroke-linecap: round"/>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #262626" transform="translate(477.505781 319.095098)">Batas kontribusi</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #262626" transform="translate(469.8425 331.097833)">minimum per kelas</text>
+   </g>
+   <g id="patch_17">
+    <path d="M 603.79344 322.498419
+Q 623.205584 322.498419 641.499694 322.498419
+" style="fill: none; stroke: #555555; stroke-linecap: round"/>
+    <path d="M 637.499694 320.498419
+L 641.499694 322.498419
+L 637.499694 324.498419
+" style="fill: none; stroke: #555555; stroke-linecap: round"/>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #262626" transform="translate(708.776875 319.095489)">Training</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #262626" transform="translate(701.968281 331.097442)">LoRA / SSF</text>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #262626" x="7.2" y="238.562344" transform="rotate(-0 7.2 238.562344)">B. Pembobotan yang menjaga kontribusi kelas kecil</text>
+   </g>
+  </g>
+  <g id="axes_3">
+   <g id="patch_18">
+    <path d="M 14.22 510.022164
+L 151.11 510.022164
+L 151.11 468.668329
+L 14.22 468.668329
+z
+" clip-path="url(#p234653680c)" style="fill: #eef1f7; stroke: #465d86; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 182.7 510.022164
+L 319.59 510.022164
+L 319.59 468.668329
+L 182.7 468.668329
+z
+" clip-path="url(#p234653680c)" style="fill: #eef1f7; stroke: #465d86; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_20">
+    <path d="M 351.18 510.022164
+L 488.07 510.022164
+L 488.07 468.668329
+L 351.18 468.668329
+z
+" clip-path="url(#p234653680c)" style="fill: #eef1f7; stroke: #465d86; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_21">
+    <path d="M 519.66 510.022164
+L 656.55 510.022164
+L 656.55 468.668329
+L 519.66 468.668329
+z
+" clip-path="url(#p234653680c)" style="fill: #eef1f7; stroke: #465d86; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_22">
+    <path d="M 688.14 510.022164
+L 825.03 510.022164
+L 825.03 468.668329
+L 688.14 468.668329
+z
+" clip-path="url(#p234653680c)" style="fill: #eef1f7; stroke: #465d86; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #262626" transform="translate(67.482969 485.941536)">Resep</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #262626" transform="translate(60.862656 497.94427)">kandidat</text>
+   </g>
+   <g id="patch_23">
+    <path d="M 154.51314 489.345247
+Q 166.905771 489.345247 178.180367 489.345247
+" style="fill: none; stroke: #555555; stroke-linecap: round"/>
+    <path d="M 174.180367 487.345247
+L 178.180367 489.345247
+L 174.180367 491.345247
+" style="fill: none; stroke: #555555; stroke-linecap: round"/>
+   </g>
+   <g id="text_15">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #262626" transform="translate(230.942656 485.941926)">Profiling</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #262626" transform="translate(232.97625 497.944661)">singkat</text>
+   </g>
+   <g id="patch_24">
+    <path d="M 322.99314 489.345247
+Q 335.385771 489.345247 346.660367 489.345247
+" style="fill: none; stroke: #555555; stroke-linecap: round"/>
+    <path d="M 342.660367 487.345247
+L 346.660367 489.345247
+L 342.660367 491.345247
+" style="fill: none; stroke: #555555; stroke-linecap: round"/>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #262626" transform="translate(380.342969 485.942317)">Filter kelayakan</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #262626" transform="translate(393.207812 497.94427)">RAM / GPU</text>
+   </g>
+   <g id="patch_25">
+    <path d="M 491.47314 489.345247
+Q 503.865771 489.345247 515.140367 489.345247
+" style="fill: none; stroke: #555555; stroke-linecap: round"/>
+    <path d="M 511.140367 487.345247
+L 515.140367 489.345247
+L 511.140367 491.345247
+" style="fill: none; stroke: #555555; stroke-linecap: round"/>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #262626" transform="translate(557.44875 485.941926)">Pilih dengan</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #262626" transform="translate(542.487812 497.944661)">kualitas dan biaya</text>
+   </g>
+   <g id="patch_26">
+    <path d="M 659.95314 489.345247
+Q 672.345771 489.345247 683.620367 489.345247
+" style="fill: none; stroke: #555555; stroke-linecap: round"/>
+    <path d="M 679.620367 487.345247
+L 683.620367 489.345247
+L 679.620367 491.345247
+" style="fill: none; stroke: #555555; stroke-linecap: round"/>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #262626" transform="translate(735.786562 485.941926)">Evaluasi</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #262626" transform="translate(726.937344 497.944661)">independen</text>
+   </g>
+   <g id="text_19">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #262626" x="7.2" y="405.409172" transform="rotate(-0 7.2 405.409172)">C. Pemilihan resep dengan anggaran resource</text>
+   </g>
+  </g>
+  <g id="text_20">
+   <text style="font-size: 15px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #262626" x="428.4" y="18.597656" transform="rotate(-0 428.4 18.597656)">Usulan kontribusi: mekanisme yang akan diuji</text>
+  </g>
+  <g id="text_21">
+   <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #262626" x="428.4" y="579.888" transform="rotate(-0 428.4 579.888)">Tidak ada hasil evaluasi gate, noise weighting, atau resource selector pada Checkpoint 1.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p7b28d964b3">
+   <rect x="7.2" y="77.715516" width="842.4" height="139.966828"/>
+  </clipPath>
+  <clipPath id="p3ade64019f">
+   <rect x="7.2" y="244.562344" width="842.4" height="139.966828"/>
+  </clipPath>
+  <clipPath id="p234653680c">
+   <rect x="7.2" y="411.409172" width="842.4" height="139.966828"/>
+  </clipPath>
+ </defs>
+</svg>

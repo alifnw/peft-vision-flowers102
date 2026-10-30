@@ -1,0 +1,4 @@
+method,trainable_including_head,observed_total_epoch_minutes,observed_mean_epoch_seconds,observed_peak_gpu_allocated_mib,observed_peak_process_rss_mib
+Linear,78438,17.56022319,10.53613391,815.5561523,3351.980469
+LoRA,373350,64.93747405,38.96248443,1118.351562,3058.5
+SSF,284262,69.40451561,41.64270937,1699.093262,3151.71875
