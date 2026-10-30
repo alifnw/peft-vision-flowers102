@@ -1,4 +1,4 @@
 arah,prioritas,mekanisme,pembanding,metrik
-A: Fusion selektif,Utama,Confidence gate mengaktifkan LoRA dan fusion untuk sebagian input,"Single model, always-on averaging, random routing, uncalibrated gate","Accuracy, NLL, Brier, risk-coverage, expert calls, latency"
+A: Selective fusion,Utama,Confidence gate mengaktifkan LoRA dan fusion untuk sebagian input,"Single model, always-on averaging, random routing, uncalibrated gate","Accuracy, NLL, Brier, risk-coverage, expert calls, latency"
 B: Kontribusi kelas,Eksperimen robustness,Within-class difficulty weights dengan minimum class contribution,"Plain LoRA, class weighting, global weighting, proposed weighting, SSF","Macro-F1, balanced accuracy, head/tail recall, NLL"
-C: Resep sesuai resource,Alternatif praktis,"Profiling, feasibility filtering dan pemilihan kualitas/biaya","Accuracy-only, parameter-only, resource-only, joint selection","Feasibility, quality, profiling cost, total runtime, peak memory"
+C: Konfigurasi sesuai resource,Alternatif praktis,"Profiling, feasibility filtering dan pemilihan kualitas/biaya","Accuracy-only, parameter-only, resource-only, joint selection","Feasibility, quality, profiling cost, total runtime, peak memory"

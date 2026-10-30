@@ -1,0 +1,6 @@
+flowchart LR
+    data["Audit data<br/>800 train / 200 validation"] --> backbone["ViT-B/16<br/>ImageNet-21K"]
+    backbone --> methods["Linear / LoRA / SSF<br/>Backbone pretrained frozen"]
+    methods --> training["100 epoch<br/>Effective batch 64, seed 42"]
+    training --> validation["Validation epoch 100<br/>Logits dan checkpoint reload"]
+    validation --> analysis["Analisis<br/>Metrik, error, ensemble"]

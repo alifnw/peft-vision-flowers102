@@ -1,12 +1,16 @@
 import sys
 from pathlib import Path
 import unittest
+import tempfile
+import json
+import hashlib
 
 import numpy as np
 import pandas as pd
+from PIL import Image
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from checkpoint_analysis import (aggregate_predictions, log_probabilities, paired_nll_bootstrap,
+from checkpoint_analysis import (AssetExporter, aggregate_predictions, log_probabilities, paired_nll_bootstrap,
                                  per_class_recall, probability_metrics, reliability_bins,
                                  runtime_summary, wilson_interval)
 
@@ -108,6 +112,34 @@ class CheckpointMetricsTests(unittest.TestCase):
         changed["LoRA"]["targets"] = y[::-1]
         with self.assertRaises(ValueError):
             paired_nll_bootstrap(changed)
+
+    def test_mermaid_assets_require_matching_sources_and_images(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            assets = root / "assets/checkpoint1"
+            (assets / "diagrams").mkdir(parents=True)
+            (assets / "figures").mkdir()
+            config = assets / "diagrams/mermaid-config.json"
+            config.write_text("{}\n")
+            source = assets / "diagrams/example.mmd"
+            source.write_text("flowchart LR\nA --> B\n")
+            png = assets / "figures/example.png"
+            Image.new("RGB", (10, 10), "white").save(png)
+            svg = assets / "figures/example.svg"
+            svg.write_text('<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10"/>')
+            digest = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
+            record = {"source": "diagrams/example.mmd", "source_sha256": digest(source),
+                      "png": "figures/example.png", "png_sha256": digest(png),
+                      "svg": "figures/example.svg", "svg_sha256": digest(svg)}
+            manifest = {"renderer": {"version": "12.0.0"}, "config_sha256": digest(config),
+                        "diagrams": {"example": record}}
+            (assets / "diagrams/rendered.json").write_text(json.dumps(manifest))
+            exporter = AssetExporter(root)
+            self.assertEqual(exporter.diagram("example", "Methods", "Example"), png)
+            self.assertEqual(len(exporter.records), 3)
+            source.write_text("flowchart LR\nA --> C\n")
+            with self.assertRaisesRegex(ValueError, "Re-render Mermaid"):
+                AssetExporter(root).diagram("example", "Methods", "Example")
 
 
 if __name__ == "__main__":

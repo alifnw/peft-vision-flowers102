@@ -1,0 +1,27 @@
+{
+  "theme": "base",
+  "deterministicIds": true,
+  "htmlLabels": false,
+  "fontFamily": "DejaVu Sans, Arial, sans-serif",
+  "themeVariables": {
+    "fontFamily": "DejaVu Sans, Arial, sans-serif",
+    "fontSize": "16px",
+    "primaryColor": "#EEF1F7",
+    "primaryTextColor": "#253149",
+    "primaryBorderColor": "#465D86",
+    "lineColor": "#526071",
+    "secondaryColor": "#FFF0D8",
+    "tertiaryColor": "#FFFFFF",
+    "clusterBkg": "#F8FAFC",
+    "clusterBorder": "#B7C4D6"
+  },
+  "flowchart": {
+    "htmlLabels": false,
+    "useMaxWidth": false,
+    "curve": "linear",
+    "nodeSpacing": 35,
+    "rankSpacing": 45,
+    "padding": 18
+  },
+  "look": "classic"
+}

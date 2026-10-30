@@ -3,6 +3,6 @@ Lingkup,"19 task VTAB, full FT, linear dan 14 metode PEFT","Flowers102, Linear, 
 Pemilihan konfigurasi,Hyperparameter search pada 800 train / 200 validation,"Satu konfigurasi tetap, tanpa search"
 Skor yang dilaporkan,Retrain pada 1.000 gambar dan evaluasi original test,Validation epoch 100 dari 800 train
 Backbone utama,ViT-B/16 supervised ImageNet-21K,ViT-B/16 supervised ImageNet-21K
-Analisis komplementaritas,"Caption menyebut majority vote, rincian Figure 4 Appendix C memakai average logits",Overlap error serta averaging probabilitas dan logits pada validation
+Error diversity analysis,"Caption menyebut majority vote, rincian Figure 4 Appendix C memakai average logits",Error overlap serta probability averaging dan logits pada validation
 Dataset,Processed VTAB dari arsip penulis,"Pinned mirror, exact membership terhadap arsip penulis belum diverifikasi"
 Komputasi,Memori dan FLOPs di luar fokus studi,"Resource tercatat sebagai diagnostik, tanpa benchmark terkontrol"

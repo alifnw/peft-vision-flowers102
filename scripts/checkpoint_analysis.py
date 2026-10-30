@@ -78,6 +78,25 @@ class AssetExporter:
         self._record(path, section, caption, caveat, source)
         return frame
 
+    def diagram(self, name, section, caption, caveat="", source="Mermaid source"):
+        manifest = self.folder / "diagrams/rendered.json"
+        try:
+            rendered = json.loads(manifest.read_text())
+            item = rendered["diagrams"][name]
+            config = self.folder / "diagrams/mermaid-config.json"
+            checks = [(config, rendered["config_sha256"])]
+            checks.extend((self.folder / item[k], item[k + "_sha256"]) for k in ("source", "png", "svg"))
+            if any(not path.is_file() or sha256(path) != expected for path, expected in checks):
+                raise ValueError("Source or rendered file changed")
+        except (OSError, KeyError, ValueError) as exc:
+            raise ValueError(f"Re-render Mermaid diagram '{name}' with scripts/render_diagrams.py") from exc
+        with Image.open(self.folder / item["png"]) as image:
+            image.verify()
+        evidence = f"{source}, diagrams/{name}.mmd, Mermaid CLI {rendered['renderer']['version']}"
+        for key in ("png", "svg", "source"):
+            self._record(self.folder / item[key], section, caption, caveat, evidence)
+        return self.folder / item["png"]
+
     def finalize(self):
         for row in self.records:
             path = self.folder / row["file"]
@@ -411,12 +430,12 @@ def configuration_decisions(runs):
         ("Paper", "Drop path", str(config["drop_path_rate"]), "Paper merekomendasikan regularisasi drop path nonzero dalam low-shot training.", "Manfaat khusus pada run kita belum diukur melalui ablation 0 versus 0.1.", "Paper section 3 and Figure 11"),
         ("Default upstream", "Warmup", f"{config['warmup_epochs']} epoch, LR awal {config['warmup_learning_rate']:g}", "Mempertahankan transisi learning rate dari default resmi.", "Lama warmup belum dituning.", default),
         ("Default upstream", "Minimum LR", f"{config['minimum_learning_rate']:g}", "Mempertahankan floor cosine schedule upstream.", "Floor lain belum dibandingkan.", default),
-        ("Default upstream", "Transformasi", "Resize bicubic 224 x 224, ToTensor, normalized=False", "Mempertahankan transformasi dataset VTAB dari implementasi yang dipin.", "Efek normalisasi belum diablasi.", default + " and data/dataset/vtab_processed.py"),
-        ("Paper", "Augmentasi", "Tidak diaktifkan", "Paper menjaga konsistensi VTAB karena augmentasi yang sama belum tentu menguntungkan 19 task.", "Kita belum menguji augmentasi khusus Flowers102.", "Paper Appendix A.1"),
+        ("Default upstream", "Transformasi", "Resize bicubic 224 x 224, ToTensor, normalized=False", "Mempertahankan transformasi dataset VTAB dari implementasi yang dipin.", "Efek normalization belum diablasi.", default + " and data/dataset/vtab_processed.py"),
+        ("Paper", "Augmentation", "Tidak diaktifkan", "Paper menjaga konsistensi VTAB karena augmentation yang sama belum tentu menguntungkan 19 task.", "Kita belum menguji augmentation khusus Flowers102.", "Paper Appendix A.1"),
         ("Default upstream", "Seed", str(config["seed"]), "Mempertahankan seed default dan memeriksa classifier awal yang sama melalui hash.", "Satu seed tidak mengukur kestabilan hasil.", default),
         ("Resource", "Effective batch / microbatch", "64 / 8 untuk LoRA dan SSF, Linear batch langsung 64", "Accumulation mengurangi kebutuhan memori per microbatch dengan 12 update per epoch.", "Dropout draws dan penjumlahan numerik dapat berbeda dari batch langsung.", "Run configs and scripts/gradient_accumulation.py"),
         ("Resource", "Loader dan precision", "workers=0, pin_memory=False, satu thread, FP32", "Membatasi alokasi host pada node bersama dan menjaga satu precision selama baseline.", "Parallel loader atau mixed precision belum dibandingkan.", "scripts/train_validation.py and run provenance"),
-        ("Protokol", "Drop last", "True, 768 gambar berkontribusi per epoch", "Mempertahankan loader upstream dengan batch efektif yang utuh.", "32 dari 800 gambar tidak berkontribusi pada satu epoch, dengan shuffle setiap epoch.", "Native loader and train_validation.py"),
+        ("Protokol", "Drop last", "True, 768 gambar berkontribusi per epoch", "Mempertahankan loader upstream dengan effective batch yang utuh.", "32 dari 800 gambar tidak berkontribusi pada satu epoch, dengan shuffle setiap epoch.", "Native loader and train_validation.py"),
         ("Protokol", "Checkpoint dan resume", "Model terlatih, optimizer, scheduler, RNG dan history disimpan", "Melanjutkan run yang terputus resource tanpa mengulang dari nol.", "Sumber dan kebijakan resource ketika resume dicatat dalam provenance.", "scripts/train_validation.py"),
         ("Protokol", "Pemilihan hasil", "Validation epoch 100", "Aturan utama tetap meskipun checkpoint lebih awal memiliki skor tertinggi.", "Best checkpoint ditampilkan sebagai diagnostik.", "Protocol recorded before full runs"),
     ]
@@ -429,7 +448,7 @@ def paper_comparison():
         ("Pemilihan konfigurasi", "Hyperparameter search pada 800 train / 200 validation", "Satu konfigurasi tetap, tanpa search"),
         ("Skor yang dilaporkan", "Retrain pada 1.000 gambar dan evaluasi original test", "Validation epoch 100 dari 800 train"),
         ("Backbone utama", "ViT-B/16 supervised ImageNet-21K", "ViT-B/16 supervised ImageNet-21K"),
-        ("Analisis komplementaritas", "Caption menyebut majority vote, rincian Figure 4 Appendix C memakai average logits", "Overlap error serta averaging probabilitas dan logits pada validation"),
+        ("Error diversity analysis", "Caption menyebut majority vote, rincian Figure 4 Appendix C memakai average logits", "Error overlap serta probability averaging dan logits pada validation"),
         ("Dataset", "Processed VTAB dari arsip penulis", "Pinned mirror, exact membership terhadap arsip penulis belum diverifikasi"),
         ("Komputasi", "Memori dan FLOPs di luar fokus studi", "Resource tercatat sebagai diagnostik, tanpa benchmark terkontrol"),
     ], columns=["Aspek", "Paper", "Checkpoint 1"])

@@ -192,7 +192,7 @@ L 419.523293 72.56
     </g>
    </g>
    <g id="LineCollection_1">
-    <path d="M 60.867145 180.555735
+    <path d="M 60.867145 180.555736
 L 60.867145 128.162949
 " clip-path="url(#p7f2fc997c0)" style="fill: none; stroke: #7356a6; stroke-width: 1.5"/>
     <path d="M 164.375413 205.377943
@@ -212,7 +212,7 @@ L -3 -0
 " style="stroke: #7356a6"/>
     </defs>
     <g clip-path="url(#p7f2fc997c0)">
-     <use xlink:href="#mcad4db56f7" x="60.867145" y="180.555735" style="fill: #7356a6; stroke: #7356a6"/>
+     <use xlink:href="#mcad4db56f7" x="60.867145" y="180.555736" style="fill: #7356a6; stroke: #7356a6"/>
      <use xlink:href="#mcad4db56f7" x="164.375413" y="205.377943" style="fill: #7356a6; stroke: #7356a6"/>
      <use xlink:href="#mcad4db56f7" x="267.883681" y="205.377943" style="fill: #7356a6; stroke: #7356a6"/>
      <use xlink:href="#mcad4db56f7" x="371.391948" y="205.377943" style="fill: #7356a6; stroke: #7356a6"/>
@@ -227,7 +227,7 @@ L -3 -0
     </g>
    </g>
    <g id="LineCollection_2">
-    <path d="M 91.919626 180.555735
+    <path d="M 91.919626 180.555736
 L 91.919626 128.162949
 " clip-path="url(#p7f2fc997c0)" style="fill: none; stroke: #387a68; stroke-width: 1.5"/>
     <path d="M 195.427893 205.377943
@@ -247,7 +247,7 @@ L -3 -0
 " style="stroke: #387a68"/>
     </defs>
     <g clip-path="url(#p7f2fc997c0)">
-     <use xlink:href="#m18c85c2a42" x="91.919626" y="180.555735" style="fill: #387a68; stroke: #387a68"/>
+     <use xlink:href="#m18c85c2a42" x="91.919626" y="180.555736" style="fill: #387a68; stroke: #387a68"/>
      <use xlink:href="#m18c85c2a42" x="195.427893" y="205.377943" style="fill: #387a68; stroke: #387a68"/>
      <use xlink:href="#m18c85c2a42" x="298.936161" y="205.377943" style="fill: #387a68; stroke: #387a68"/>
      <use xlink:href="#m18c85c2a42" x="402.444429" y="205.377943" style="fill: #387a68; stroke: #387a68"/>
@@ -378,7 +378,7 @@ L 58.988281 267.049297
      </g>
     </g>
     <g id="text_24">
-     <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #262626" x="73.388281" y="273.849297" transform="rotate(-0 73.388281 273.849297)">Mean probabilitas</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #262626" x="73.388281" y="273.849297" transform="rotate(-0 73.388281 273.849297)">Probability averaging</text>
     </g>
     <g id="LineCollection_4">
      <path d="M 58.988281 287.049922
@@ -402,7 +402,7 @@ L 58.988281 279.049922
      </g>
     </g>
     <g id="text_25">
-     <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #262626" x="73.388281" y="285.849922" transform="rotate(-0 73.388281 285.849922)">Mean logits</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #262626" x="73.388281" y="285.849922" transform="rotate(-0 73.388281 285.849922)">Logit averaging</text>
     </g>
    </g>
   </g>
@@ -650,26 +650,26 @@ L 848.925937 72.56
    </g>
    <g id="legend_2">
     <g id="patch_20">
-     <path d="M 747.965937 85.83875
-L 763.965937 85.83875
-L 763.965937 80.23875
-L 747.965937 80.23875
+     <path d="M 734.292187 85.83875
+L 750.292187 85.83875
+L 750.292187 80.23875
+L 734.292187 80.23875
 z
 " style="fill: #7356a6"/>
     </g>
     <g id="text_46">
-     <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #262626" x="770.365937" y="85.83875" transform="rotate(-0 770.365937 85.83875)">Mean probabilitas</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #262626" x="756.692187" y="85.83875" transform="rotate(-0 756.692187 85.83875)">Probability averaging</text>
     </g>
     <g id="patch_21">
-     <path d="M 747.965937 97.839375
-L 763.965937 97.839375
-L 763.965937 92.239375
-L 747.965937 92.239375
+     <path d="M 734.292187 97.839375
+L 750.292187 97.839375
+L 750.292187 92.239375
+L 734.292187 92.239375
 z
 " style="fill: #387a68"/>
     </g>
     <g id="text_47">
-     <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #262626" x="770.365937" y="97.839375" transform="rotate(-0 770.365937 97.839375)">Mean logits</text>
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #262626" x="756.692187" y="97.839375" transform="rotate(-0 756.692187 97.839375)">Logit averaging</text>
     </g>
    </g>
   </g>

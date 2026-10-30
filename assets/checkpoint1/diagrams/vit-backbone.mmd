@@ -1,0 +1,11 @@
+flowchart LR
+    image["Gambar RGB<br/>224 x 224"] --> patch["Patch 16 x 16<br/>196 patch"]
+    patch --> embedding["Embedding + CLS<br/>197 token x 768"]
+    embedding --> transformer["12 blok Transformer<br/>Attention + MLP"]
+    transformer --> cls["Fitur CLS<br/>768 dimensi"]
+    cls --> head["Classifier<br/>102 kelas"]
+
+    classDef frozen fill:#E7EDF7,stroke:#465D86,color:#253149
+    classDef trained fill:#FFF0D8,stroke:#C47723,color:#5C3816
+    class patch,embedding,transformer,cls frozen
+    class head trained

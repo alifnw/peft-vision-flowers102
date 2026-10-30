@@ -1,0 +1,29 @@
+flowchart TB
+    subgraph fusion["A: Usulan confidence-based selective fusion"]
+        direction LR
+        a0["Linear"] --> a1["Calibration<br/>skor Linear"]
+        a1 --> gate{"Cukup yakin?"}
+        gate -->|Ya| accept["Prediksi Linear"]
+        gate -->|Tidak| a2["LoRA"]
+        a2 --> a3["Fusion prediksi"]
+        a1 -. skor Linear .-> a3
+    end
+
+    subgraph weighting["B: Usulan class-preserving sample weighting"]
+        direction LR
+        b0["Loss sampel<br/>training"] --> b1["Bobot relatif<br/>di dalam kelas"]
+        b1 --> b2["Batas kontribusi<br/>minimum per kelas"]
+        b2 --> b3["Training<br/>LoRA / SSF"]
+        b3 --> b4["Evaluasi<br/>pada data bersih"]
+    end
+
+    subgraph recipes["C: Usulan pemilihan konfigurasi sesuai resource"]
+        direction LR
+        c0["Kandidat konfigurasi"] --> c1["Profiling<br/>singkat"]
+        c1 --> c2["Filter kelayakan<br/>host RAM / GPU"]
+        c2 --> c3["Pilih berdasarkan<br/>kualitas dan biaya"]
+        c3 --> c4["Evaluasi<br/>independen"]
+    end
+
+    fusion ~~~ weighting
+    weighting ~~~ recipes

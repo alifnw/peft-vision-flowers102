@@ -5,6 +5,7 @@ __pycache__/
 .ipynb_checkpoints/
 .presentation-build/
 .chart-data-*/
+node_modules/
 
 # Data, external paper source, and pretrained weights
 /data/

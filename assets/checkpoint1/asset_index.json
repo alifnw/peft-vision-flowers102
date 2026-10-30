@@ -47,48 +47,72 @@
       "notebook_section": "Metodologi & Eksperimen",
       "caption": "Alur gambar, embedding patch, Transformer dan classifier pada ViT-B/16.",
       "interpretation_limit": "Diagram merangkum alur utama.",
-      "source": "Pinned upstream ViT-B/16 architecture and image transform",
-      "sha256": "4b99ca52451999e7bbbeeb30bec2c25098f3bab7a504a2f8d80ee7a39a38df4e"
+      "source": "Pinned upstream ViT-B/16 architecture and image transform, diagrams/vit-backbone.mmd, Mermaid CLI 12.0.0",
+      "sha256": "e3b2c20a458ea984e7df962d9faf947b953302fd523637946afba5327bc80cf1"
     },
     {
       "file": "figures/vit-backbone.svg",
       "notebook_section": "Metodologi & Eksperimen",
       "caption": "Alur gambar, embedding patch, Transformer dan classifier pada ViT-B/16.",
       "interpretation_limit": "Diagram merangkum alur utama.",
-      "source": "Pinned upstream ViT-B/16 architecture and image transform",
-      "sha256": "02afe9685dee8faefdbbd7ebec1b27a104b7fb488691aee35581acf50b18fa71"
+      "source": "Pinned upstream ViT-B/16 architecture and image transform, diagrams/vit-backbone.mmd, Mermaid CLI 12.0.0",
+      "sha256": "d39e77bc49625858c3ed359d53cf4c4afd88081c4a6a4111cc10160f9ccca2de"
+    },
+    {
+      "file": "diagrams/vit-backbone.mmd",
+      "notebook_section": "Metodologi & Eksperimen",
+      "caption": "Alur gambar, embedding patch, Transformer dan classifier pada ViT-B/16.",
+      "interpretation_limit": "Diagram merangkum alur utama.",
+      "source": "Pinned upstream ViT-B/16 architecture and image transform, diagrams/vit-backbone.mmd, Mermaid CLI 12.0.0",
+      "sha256": "915b1bdde07e774b7b06dc42ecc93c40d28978874d0d11512912752cd8d07f90"
     },
     {
       "file": "figures/method-diagram.png",
       "notebook_section": "Metodologi & Eksperimen",
       "caption": "Perbedaan parameter frozen dan trainable pada tiga metode.",
       "interpretation_limit": "Skema mengikuti implementasi native.",
-      "source": "Pinned model/lora.py, model/ssf.py and parameter boundaries",
-      "sha256": "d12e25ea1e472e79e97b47656d1efdfac54124a17ceaff0588e8706314e1ff8e"
+      "source": "Pinned model/lora.py, model/ssf.py and parameter boundaries, diagrams/method-diagram.mmd, Mermaid CLI 12.0.0",
+      "sha256": "39a433c00cda984a0dc550b39f8a7357c73dfca9b95e93a1d566cdbb636b5fd1"
     },
     {
       "file": "figures/method-diagram.svg",
       "notebook_section": "Metodologi & Eksperimen",
       "caption": "Perbedaan parameter frozen dan trainable pada tiga metode.",
       "interpretation_limit": "Skema mengikuti implementasi native.",
-      "source": "Pinned model/lora.py, model/ssf.py and parameter boundaries",
-      "sha256": "2da2fbacbc926f97fe3bfe8c0e48ed2097bf89255cb64eec11f9ac3b89fa6c72"
+      "source": "Pinned model/lora.py, model/ssf.py and parameter boundaries, diagrams/method-diagram.mmd, Mermaid CLI 12.0.0",
+      "sha256": "e8a9c7f59546586593c10172fec63e22c6a752b919dbd264c52c0ba0fdd3fdd1"
+    },
+    {
+      "file": "diagrams/method-diagram.mmd",
+      "notebook_section": "Metodologi & Eksperimen",
+      "caption": "Perbedaan parameter frozen dan trainable pada tiga metode.",
+      "interpretation_limit": "Skema mengikuti implementasi native.",
+      "source": "Pinned model/lora.py, model/ssf.py and parameter boundaries, diagrams/method-diagram.mmd, Mermaid CLI 12.0.0",
+      "sha256": "de84612e6e8e23d3e39bd1b9105dfe76f607ab88eceeecfbae8965f33aaab49e"
     },
     {
       "file": "figures/experiment-flow.png",
       "notebook_section": "Metodologi & Eksperimen",
       "caption": "Urutan persiapan data, training dan analisis validation epoch 100.",
       "interpretation_limit": "Tidak mencakup hyperparameter search, retraining trainval atau evaluasi test.",
-      "source": "results/checkpoint1: stored epoch-100 results, histories and logits",
-      "sha256": "1bc379e4b52680445c9e41bfb9fd1e60f4bae286ff9229e6758521487dc33a8c"
+      "source": "Mermaid source, diagrams/experiment-flow.mmd, Mermaid CLI 12.0.0",
+      "sha256": "0c144b4be32b7b679df0b9139937e20d6580a31585fe668bebf73f351e253598"
     },
     {
       "file": "figures/experiment-flow.svg",
       "notebook_section": "Metodologi & Eksperimen",
       "caption": "Urutan persiapan data, training dan analisis validation epoch 100.",
       "interpretation_limit": "Tidak mencakup hyperparameter search, retraining trainval atau evaluasi test.",
-      "source": "results/checkpoint1: stored epoch-100 results, histories and logits",
-      "sha256": "797cb9eccc4aba90bfe80c7d383ceaded7c725f2938cbdc229b90393dd40f20f"
+      "source": "Mermaid source, diagrams/experiment-flow.mmd, Mermaid CLI 12.0.0",
+      "sha256": "a5430147c05cb20e776f04b29b2d1a6cfa063f159963643cef504bb387be4e34"
+    },
+    {
+      "file": "diagrams/experiment-flow.mmd",
+      "notebook_section": "Metodologi & Eksperimen",
+      "caption": "Urutan persiapan data, training dan analisis validation epoch 100.",
+      "interpretation_limit": "Tidak mencakup hyperparameter search, retraining trainval atau evaluasi test.",
+      "source": "Mermaid source, diagrams/experiment-flow.mmd, Mermaid CLI 12.0.0",
+      "sha256": "e9fc05309f62441d3fe1f910ae8bc0162ad28bfc976aee8bdae19e9dad088a28"
     },
     {
       "file": "tables/configuration-decisions.csv",
@@ -96,7 +120,7 @@
       "caption": "Konfigurasi aktual, sumber pemilihan dan konsekuensinya.",
       "interpretation_limit": "Pilihan dari grid belum menjadi hasil tuning optimum.",
       "source": "Run configs, pinned upstream source and Mai et al. Appendix A",
-      "sha256": "de8e17f3d0178f81762a307c260778bdf91ecd110ceab076982481e17533032a"
+      "sha256": "4e3a784f0ae799f670e7996d4dd739e26b7f6e42912266dc26cef88ccd77873e"
     },
     {
       "file": "tables/paper-comparison.csv",
@@ -104,7 +128,7 @@
       "caption": "Perbedaan protokol paper dan eksperimen checkpoint.",
       "interpretation_limit": "Validation checkpoint tidak langsung sebanding dengan hasil test paper.",
       "source": "Mai et al. sections 3\u20134 and Appendix A/C",
-      "sha256": "7686bded518a7abc77850581381644cd452a9371e32fad07017a0d3307d00ae9"
+      "sha256": "35406c09bfa3bfd8ab27fce229f42bc5bdabb267e15f198583c7b0ac3667c2a0"
     },
     {
       "file": "tables/provenance-checks.csv",
@@ -174,7 +198,7 @@
       "file": "figures/probability-quality.png",
       "notebook_section": "Hasil & Evaluasi",
       "caption": "Perbedaan NLL dan multiclass Brier pada accuracy yang sama.",
-      "interpretation_limit": "Proper scores tidak mengukur kalibrasi saja.",
+      "interpretation_limit": "Proper scores tidak mengukur calibration saja.",
       "source": "results/checkpoint1: stored epoch-100 results, histories and logits",
       "sha256": "9ba2adb78295f6072e68125f2dc2e618a4d676e93a110418f0c3aefc4bdf7964"
     },
@@ -182,7 +206,7 @@
       "file": "figures/probability-quality.svg",
       "notebook_section": "Hasil & Evaluasi",
       "caption": "Perbedaan NLL dan multiclass Brier pada accuracy yang sama.",
-      "interpretation_limit": "Proper scores tidak mengukur kalibrasi saja.",
+      "interpretation_limit": "Proper scores tidak mengukur calibration saja.",
       "source": "results/checkpoint1: stored epoch-100 results, histories and logits",
       "sha256": "e18ef7ea1057a667b1ca20384cf688bdcf743e49c6a4e51304dbdc5832add777"
     },
@@ -198,7 +222,7 @@
       "file": "figures/reliability.png",
       "notebook_section": "Hasil & Evaluasi",
       "caption": "Reliability plot dengan dukungan sampel per bin.",
-      "interpretation_limit": "Top-label calibration pada validation terbatas, tanpa fitting kalibrasi.",
+      "interpretation_limit": "Top-label calibration pada validation terbatas, tanpa calibration fitting.",
       "source": "results/checkpoint1: stored epoch-100 results, histories and logits",
       "sha256": "a6619cd2f90392c89685e4f8f873b28f3e4b239b89629bba0682b17580946c71"
     },
@@ -206,7 +230,7 @@
       "file": "figures/reliability.svg",
       "notebook_section": "Hasil & Evaluasi",
       "caption": "Reliability plot dengan dukungan sampel per bin.",
-      "interpretation_limit": "Top-label calibration pada validation terbatas, tanpa fitting kalibrasi.",
+      "interpretation_limit": "Top-label calibration pada validation terbatas, tanpa calibration fitting.",
       "source": "results/checkpoint1: stored epoch-100 results, histories and logits",
       "sha256": "8fc2b35fe1000c56582c19cec81f431107f075e79453289dd8273f19254bbf3a"
     },
@@ -253,7 +277,7 @@
     {
       "file": "figures/prediction-comparison.png",
       "notebook_section": "Diskusi",
-      "caption": "Disagreement prediksi dan overlap error.",
+      "caption": "Disagreement prediksi dan error overlap.",
       "interpretation_limit": "Tidak membuktikan perbedaan inductive bias secara kausal.",
       "source": "results/checkpoint1: stored epoch-100 results, histories and logits",
       "sha256": "e0d09f0a2b90cd46f4cc1deeed5e75f4d6f1c249c93c5293334490ae19eb0e88"
@@ -261,7 +285,7 @@
     {
       "file": "figures/prediction-comparison.svg",
       "notebook_section": "Diskusi",
-      "caption": "Disagreement prediksi dan overlap error.",
+      "caption": "Disagreement prediksi dan error overlap.",
       "interpretation_limit": "Tidak membuktikan perbedaan inductive bias secara kausal.",
       "source": "results/checkpoint1: stored epoch-100 results, histories and logits",
       "sha256": "bdd961e141a8d64b584b3ec1011dc2f37f65b395b7a67cd917c2c4f54500d7bf"
@@ -373,7 +397,7 @@
     {
       "file": "tables/exploratory-ensembles.csv",
       "notebook_section": "Diskusi",
-      "caption": "Empat kombinasi anggota dibandingkan dengan mean probabilitas dan mean logits.",
+      "caption": "Empat kombinasi anggota dibandingkan dengan probability averaging dan logit averaging.",
       "interpretation_limit": "Delapan hasil eksplorasi pada validation yang sudah dianalisis.",
       "source": "results/checkpoint1/{linear,lora,ssf}/: result.json, history.csv and validation_last.npz",
       "sha256": "2e9da77b15298d80e1f9a2f5bd3fa1cf698b5ee9bc4701fbd49b5347afb02b5d"
@@ -384,7 +408,7 @@
       "caption": "Accuracy dan NLL dari dua aturan agregasi.",
       "interpretation_limit": "Tidak ada pemilihan bobot atau hasil test independen.",
       "source": "results/checkpoint1: stored epoch-100 results, histories and logits",
-      "sha256": "94fd76dd39d407d1d2ae2df38f0a5b09ed5fa3c717038fe7bf0f93c389545687"
+      "sha256": "e94fc12a610fcbde34e347be696688914abb9381107dae8ec5c371c41e2166d9"
     },
     {
       "file": "figures/exploratory-ensembles.svg",
@@ -392,7 +416,7 @@
       "caption": "Accuracy dan NLL dari dua aturan agregasi.",
       "interpretation_limit": "Tidak ada pemilihan bobot atau hasil test independen.",
       "source": "results/checkpoint1: stored epoch-100 results, histories and logits",
-      "sha256": "0ab324db82e85877243e207c7b6355a017b4c1d04d1e614b3382b7cb4f433644"
+      "sha256": "d55f6df9af7b14316af94504c2480a947841b554ae324f2312f231bf498f51a3"
     },
     {
       "file": "tables/paper-findings.csv",
@@ -400,7 +424,7 @@
       "caption": "Hubungan temuan paper dan bukti checkpoint.",
       "interpretation_limit": "Kesesuaian lokal belum mereplikasi seluruh kesimpulan paper.",
       "source": "Mai et al. sections 3\u20137 and current results",
-      "sha256": "be2ed7abdbe36aefe8d7c7436743f9a659488deda3ddf641ab3ab5e8df490bdb"
+      "sha256": "44b768102683978e3fcb0d320c92600d8fa3a563fa78f7edb03df4efd75ae1ea"
     },
     {
       "file": "tables/observed-resources.csv",
@@ -415,16 +439,24 @@
       "notebook_section": "Future Works",
       "caption": "Mekanisme tiga usulan eksperimen lanjutan.",
       "interpretation_limit": "Tidak ada hasil evaluasi gate, noise weighting atau resource selector.",
-      "source": "Current validation evidence and cited related work",
-      "sha256": "c8090e7d3cba2137ae66fbb612a8d2450f53f614286952444b8fe8625cbbd95d"
+      "source": "Current validation evidence and cited related work, diagrams/research-directions.mmd, Mermaid CLI 12.0.0",
+      "sha256": "33ca966fa8ad4462fd3083832ebcca3fa5f6410e4db8010f8030c5ae1e360a42"
     },
     {
       "file": "figures/research-directions.svg",
       "notebook_section": "Future Works",
       "caption": "Mekanisme tiga usulan eksperimen lanjutan.",
       "interpretation_limit": "Tidak ada hasil evaluasi gate, noise weighting atau resource selector.",
-      "source": "Current validation evidence and cited related work",
-      "sha256": "c1dc824abadd98b0bfbb77232f0df2087286b78186779e5eaf3a067d6105fb58"
+      "source": "Current validation evidence and cited related work, diagrams/research-directions.mmd, Mermaid CLI 12.0.0",
+      "sha256": "d0e1b7e10b316a2f16d5a2593ec29862d7f83ded0721ae0d9c6e429372dcdb78"
+    },
+    {
+      "file": "diagrams/research-directions.mmd",
+      "notebook_section": "Future Works",
+      "caption": "Mekanisme tiga usulan eksperimen lanjutan.",
+      "interpretation_limit": "Tidak ada hasil evaluasi gate, noise weighting atau resource selector.",
+      "source": "Current validation evidence and cited related work, diagrams/research-directions.mmd, Mermaid CLI 12.0.0",
+      "sha256": "87a5b4ad7cda6fe824a04bf47c317404084d7c2b6f1f1ebb3331a4385c21d7fd"
     },
     {
       "file": "tables/research-directions.csv",
@@ -432,7 +464,7 @@
       "caption": "Mekanisme, pembanding dan metrik usulan eksperimen.",
       "interpretation_limit": "Usulan belum dilatih atau dievaluasi.",
       "source": "Current evidence and docs/RESEARCH_DIRECTIONS.md",
-      "sha256": "a93f75d0a08af2e670d1fd875014c9ac8c9c907728547e4b7ca934103e78eee0"
+      "sha256": "efd3f437f4e240e424bf055ff5d4b9af0a5c4159ed8ba760327d73284f080f4b"
     },
     {
       "file": "tables/references.csv",

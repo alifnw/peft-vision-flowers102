@@ -2,9 +2,11 @@
 
 **Kelompok 1: Alif Negifta Wibawaputra, Charleen Samaeri Gulo**
 
-Reproduction progress for [Lessons and Insights from a Unifying Study of Parameter-Efficient Fine-Tuning in Visual Recognition](https://arxiv.org/abs/2409.16434), CVPR 2025.
+Partial reproduction with exploratory analysis of [Lessons and Insights from a Unifying Study of Parameter-Efficient Fine-Tuning in Visual Recognition](https://arxiv.org/abs/2409.16434), CVPR 2025.
 
 The [notebook](notebooks/01_flowers102_checkpoint1.ipynb) reports the dataset audit, ViT and adaptation methods, training protocol, results, error analysis and proposed extensions.
+
+Research question: under a fixed training configuration, how do Linear, LoRA and SSF differ in probability quality and prediction errors despite achieving the same validation accuracy?
 
 ## Progress
 
@@ -18,7 +20,7 @@ The [notebook](notebooks/01_flowers102_checkpoint1.ipynb) reports the dataset au
 
 The runs use supervised ImageNet-21K ViT-B/16, seed 42, AdamW, learning rate 0.001, weight decay 0.0001, effective batch 64, cosine decay, 10 warmup epochs and drop path 0.1. LoRA uses rank 8. LoRA and SSF use microbatch 8. All runs use FP32.
 
-Learning rate, weight decay and rank are baseline choices within the official grid. They have not been tuned in this experiment. Native LoRA updates Q, K and V through a shared low-rank projection. See [configuration notes](docs/CONFIGURATION_NOTES.md) and the [training protocol](docs/TRAINING_PROTOCOL.md).
+Learning rate, weight decay and rank are baseline choices within the official grid. They have not been tuned in this experiment. Matching settings does not establish equally well-tuned methods or an optimal parameter budget. Native LoRA updates Q, K and V through a shared low-rank projection. See [configuration notes](docs/CONFIGURATION_NOTES.md) and the [training protocol](docs/TRAINING_PROTOCOL.md).
 
 ## Validation results
 
@@ -32,7 +34,9 @@ Parameter counts include the classifier. Brier sums over 102 classes before aver
 
 Uniform probability averaging and logit averaging both give 200/200 correct for Linear-LoRA and 199/200 for the other three combinations. Their NLL values differ. These are exploratory results on reused validation data.
 
-SSF has the lowest single-model NLL point estimate. The paired-bootstrap interval for SSF minus LoRA includes zero. The experiment does not establish an overall winner.
+Linear-LoRA probability averaging raises the correct count by two images but has worse NLL than single LoRA: 0.0734 versus 0.0410. Each model makes only two errors, so different error locations provide limited evidence for systematic complementarity.
+
+LoRA and SSF have lower NLL and Brier than Linear. These scores do not isolate calibration or establish improved representations as the cause. Temperature-scaled Linear remains an untested control. SSF has the lowest single-model NLL point estimate, but the paired-bootstrap interval for SSF minus LoRA includes zero. The experiment does not establish an overall winner or an inference-efficiency benefit.
 
 ## Run the CPU notebook
 
@@ -47,7 +51,7 @@ python -m ipykernel install --user --name peft-checkpoint1-cpu --display-name "P
 
 Open the notebook, select **PEFT Checkpoint 1 (CPU)**, restart the kernel and Run All. Start from the repository root or the notebooks folder. Analysis reads local snapshots and does not start training or download data.
 
-Figures and CSV tables are regenerated under assets/checkpoint1. The asset index records sources, producing sections, interpretation limits and hashes. Training code is separate and its GPU environment is documented in the training protocol.
+Metric figures and CSV tables are regenerated under assets/checkpoint1. Mermaid diagrams are loaded from validated local PNG/SVG files, with their editable .mmd sources included. The asset index records sources, producing sections, interpretation limits and hashes. Training code is separate and its GPU environment is documented in the training protocol.
 
 CPU checks:
 
@@ -55,13 +59,24 @@ CPU checks:
 python -m unittest discover -s tests -p 'test_checkpoint*.py' -v
 ```
 
+## Optional diagram rendering
+
+The four diagrams use Mermaid CLI 12.0.0. Their sources and rendering configuration are under assets/checkpoint1/diagrams. Rebuilding requires Node.js 22.13 or newer and an installed Chromium browser. Normal notebook execution requires neither Node nor browser access.
+
+```bash
+PUPPETEER_SKIP_DOWNLOAD=1 npm ci --ignore-scripts
+python scripts/render_diagrams.py
+```
+
+Use --chromium PATH if the browser is not on PATH. After editing a diagram, render it and rerun the notebook to refresh its outputs and asset index.
+
 ## Interpretation limits
 
 This is a fixed-configuration, single-seed comparison on one VTAB-1K task. Twelve classes have no validation samples. Exact mirror split membership against the authors' archive is unverified.
 
 Test metadata and sample files were checked during integrity preparation. Test data were not used for training, configuration selection or performance evaluation. Validation scores are not directly comparable with the paper's tuned and retrained test results. Runtime and memory logs come from shared-node conditions.
 
-Proposed extensions cover selective fusion, class-preserving weighting under controlled label noise, and resource-aware recipe selection. Their evaluation plans and literature context are in [research directions](docs/RESEARCH_DIRECTIONS.md). None has been evaluated yet.
+Selective fusion is the primary proposed extension. Its controls include calibrated single models, same-method seed ensembles and always-on fusion. Both Linear and LoRA run a full ViT, so any quality-latency benefit requires direct measurement. Other proposals cover class-preserving weighting under controlled label noise and resource-aware recipe selection. Their evaluation plans and literature context are in [research directions](docs/RESEARCH_DIRECTIONS.md). None has been evaluated yet.
 
 ## Sources
 

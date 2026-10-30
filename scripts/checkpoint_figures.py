@@ -1,7 +1,6 @@
 """CPU figures for the completed Flowers102 experiments."""
 
 import matplotlib.pyplot as plt
-from matplotlib.patches import Rectangle
 import numpy as np
 from PIL import Image, ImageOps
 
@@ -154,8 +153,8 @@ def ensemble_results(table):
     names = table["ensemble"].drop_duplicates().tolist()
     labels = [name.replace(" + ", "\n+ ") for name in names]
     fig, axes = plt.subplots(1, 2, figsize=(12, 5))
-    settings = [("probability_mean", "Mean probabilitas", "#7356A6", -.15),
-                ("logit_mean", "Mean logits", "#387A68", .15)]
+    settings = [("probability_mean", "Probability averaging", "#7356A6", -.15),
+                ("logit_mean", "Logit averaging", "#387A68", .15)]
     for key, label, color, offset in settings:
         subset = table.loc[table["aggregation"] == key].set_index("ensemble").loc[names]
         x = np.arange(len(names)) + offset
@@ -181,119 +180,4 @@ def ensemble_results(table):
     fig.text(.5, .005, "Tidak ada bobot yang dioptimasi. Hasil ini belum menjadi estimasi performa test independen.",
              ha="center", fontsize=8)
     fig.tight_layout(rect=(0, .04, 1, .94))
-    return fig
-
-
-def vit_backbone_diagram():
-    fig, ax = plt.subplots(figsize=(13, 2.6))
-    ax.set(xlim=(0, 13), ylim=(0, 2))
-    ax.axis("off")
-    labels = ["Gambar RGB\n224 x 224", "Patch 16 x 16\n196 patch", "Embedding + CLS\n197 token x 768",
-              "12 blok Transformer\nattention + MLP", "Fitur CLS\n768 dimensi", "Classifier\n102 kelas"]
-    for i, label in enumerate(labels):
-        x = .05 + i * 2.16
-        ax.add_patch(Rectangle((x, .55), 1.9, .9, facecolor="#EEF1F7", edgecolor="#465D86"))
-        ax.text(x + .95, 1, label, ha="center", va="center", fontsize=10)
-        if i < 5:
-            ax.annotate("", xy=(x + 2.14, 1), xytext=(x + 1.92, 1),
-                        arrowprops={"arrowstyle": "->", "color": "#555555"})
-    ax.set_title("Alur ViT-B/16 untuk klasifikasi Flowers102", fontsize=14)
-    fig.tight_layout()
-    return fig
-
-
-def experiment_flow():
-    fig, ax = plt.subplots(figsize=(14, 2.6))
-    ax.set(xlim=(0, 14), ylim=(0, 2.3))
-    ax.axis("off")
-    labels = ["Snapshot data\n800 train / 200 val", "ViT-B/16\nImageNet-21K",
-              "Linear / LoRA / SSF\nbackbone frozen", "100 epoch\nseed 42",
-              "Validation epoch 100\nlogits dan checkpoint", "Analisis\nmetrik dan error"]
-    for i, label in enumerate(labels):
-        x = .05 + i * 2.33
-        ax.add_patch(Rectangle((x, .65), 2.05, .95, facecolor="#EEF1F7", edgecolor="#465D86", linewidth=1.2))
-        ax.text(x + 1.025, 1.125, label, ha="center", va="center", fontsize=11)
-        if i < 5:
-            ax.annotate("", xy=(x + 2.29, 1.125), xytext=(x + 2.06, 1.125),
-                        arrowprops={"arrowstyle": "->", "color": "#555555"})
-    ax.text(7, .2, "Test tidak digunakan untuk training, pemilihan konfigurasi, atau evaluasi performa.",
-            ha="center", fontsize=10)
-    fig.tight_layout()
-    return fig
-
-
-def method_diagram():
-    fig, ax = plt.subplots(figsize=(11, 6))
-    ax.set(xlim=(0, 11), ylim=(0, 6))
-    ax.axis("off")
-    labels = ["Linear", "LoRA", "SSF"]
-    descriptions = ["", "A: 768 -> 8, B: 8 -> 2304\nDelta Q, K, V dalam 12 blok",
-                    "Scale dan shift fitur\ngamma * z + beta"]
-    for i, (name, description) in enumerate(zip(labels, descriptions)):
-        y = 4.5 - i * 1.5
-        ax.text(.05, y + .4, name, fontsize=13, fontweight="bold", va="center")
-        ax.text(1.75, y + .4, "Gambar\n224 x 224", ha="center", va="center", fontsize=10)
-        ax.add_patch(Rectangle((2.6, y - .1), 4.2, 1.1, facecolor="#E7EDF7", edgecolor="#465D86"))
-        ax.text(4.7, y + .72, "ViT-B/16: bobot pretrained frozen", ha="center", fontsize=11)
-        if description:
-            ax.add_patch(Rectangle((2.85, y), 3.7, .48, facecolor="#FFF0D8", edgecolor="#C47723"))
-            ax.text(4.7, y + .23, description, ha="center", va="center", fontsize=9.5)
-        else:
-            ax.text(4.7, y + .23, "Fitur pretrained", ha="center", va="center", fontsize=10)
-        ax.add_patch(Rectangle((7.55, y + .05), 1.65, .75, facecolor="#FFF0D8", edgecolor="#C47723"))
-        ax.text(8.375, y + .425, "Classifier\n78.438 parameter", ha="center", va="center", fontsize=10)
-        ax.text(10.25, y + .4, "102 kelas", ha="center", va="center", fontsize=10)
-        for start, end in ((2.2, 2.58), (6.82, 7.53), (9.22, 9.75)):
-            ax.annotate("", xy=(end, y + .4), xytext=(start, y + .4),
-                        arrowprops={"arrowstyle": "->", "color": "#555555"})
-    ax.text(5.5, .25, "Biru: bobot frozen. Oranye: parameter yang dilatih. Skema mengikuti implementasi pinned.",
-            ha="center", fontsize=10)
-    fig.tight_layout()
-    return fig
-
-
-def research_direction_diagram():
-    fig, axes = plt.subplots(3, 1, figsize=(12, 8.2))
-    def box(ax, x, y, w, label):
-        ax.add_patch(Rectangle((x, y), w, .65, facecolor="#EEF1F7", edgecolor="#465D86"))
-        ax.text(x + w / 2, y + .325, label, ha="center", va="center", fontsize=10)
-    def arrow(ax, start, end, label=""):
-        ax.annotate("", xy=end, xytext=start, arrowprops={"arrowstyle": "->", "color": "#555555"})
-        if label:
-            ax.text((start[0] + end[0]) / 2, (start[1] + end[1]) / 2 + .12,
-                    label, ha="center", fontsize=8)
-    for ax in axes:
-        ax.set(xlim=(0, 12), ylim=(0, 2.2))
-        ax.axis("off")
-    ax = axes[0]
-    ax.set_title("A. Fusion selektif berdasarkan confidence", loc="left", fontsize=13, fontweight="bold")
-    box(ax, .1, .7, 1.7, "Linear")
-    box(ax, 2.5, .7, 2.0, "Confidence\nterkalibrasi")
-    box(ax, 5.6, .1, 1.6, "LoRA")
-    box(ax, 8.3, .1, 2.6, "Fusion probabilitas")
-    box(ax, 8.3, 1.35, 2.6, "Terima prediksi Linear")
-    arrow(ax, (1.82, 1.025), (2.48, 1.025))
-    arrow(ax, (4.52, 1.025), (5.58, .425), "kurang yakin")
-    arrow(ax, (7.22, .425), (8.28, .425))
-    arrow(ax, (4.52, 1.2), (8.28, 1.675), "yakin")
-    ax = axes[1]
-    ax.set_title("B. Pembobotan yang menjaga kontribusi kelas kecil", loc="left", fontsize=13, fontweight="bold")
-    labels = ["Loss sampel\ntraining", "Bobot relatif\ndalam kelas", "Batas kontribusi\nminimum per kelas", "Training\nLoRA / SSF"]
-    for i, label in enumerate(labels):
-        x = .1 + i * 3
-        box(ax, x, .65, 2.35, label)
-        if i < 3:
-            arrow(ax, (x + 2.37, .975), (x + 2.98, .975))
-    ax = axes[2]
-    ax.set_title("C. Pemilihan resep dengan anggaran resource", loc="left", fontsize=13, fontweight="bold")
-    labels = ["Resep\nkandidat", "Profiling\nsingkat", "Filter kelayakan\nRAM / GPU", "Pilih dengan\nkualitas dan biaya", "Evaluasi\nindependen"]
-    for i, label in enumerate(labels):
-        x = .1 + i * 2.4
-        box(ax, x, .65, 1.95, label)
-        if i < 4:
-            arrow(ax, (x + 1.97, .975), (x + 2.38, .975))
-    fig.suptitle("Usulan kontribusi: mekanisme yang akan diuji", fontsize=15)
-    fig.text(.5, .01, "Tidak ada hasil evaluasi gate, noise weighting, atau resource selector pada Checkpoint 1.",
-             ha="center", fontsize=9)
-    fig.tight_layout(rect=(0, .04, 1, .95))
     return fig

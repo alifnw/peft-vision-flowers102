@@ -1,0 +1,46 @@
+{
+  "renderer": {
+    "name": "@mermaid-js/mermaid-cli",
+    "version": "12.0.0",
+    "mermaid_version": "12.2.0",
+    "browser_version": "Chromium 156.0.8078.47 Arch Linux",
+    "scale": 3,
+    "maximum_size": 1800,
+    "png_dpi": 300
+  },
+  "config_sha256": "b0534866e17f52bf307f74d87aff55e5def8d6f9b48f10520e0b481bebc5383e",
+  "diagrams": {
+    "experiment-flow": {
+      "source": "diagrams/experiment-flow.mmd",
+      "source_sha256": "e9fc05309f62441d3fe1f910ae8bc0162ad28bfc976aee8bdae19e9dad088a28",
+      "svg": "figures/experiment-flow.svg",
+      "svg_sha256": "a5430147c05cb20e776f04b29b2d1a6cfa063f159963643cef504bb387be4e34",
+      "png": "figures/experiment-flow.png",
+      "png_sha256": "0c144b4be32b7b679df0b9139937e20d6580a31585fe668bebf73f351e253598"
+    },
+    "method-diagram": {
+      "source": "diagrams/method-diagram.mmd",
+      "source_sha256": "de84612e6e8e23d3e39bd1b9105dfe76f607ab88eceeecfbae8965f33aaab49e",
+      "svg": "figures/method-diagram.svg",
+      "svg_sha256": "e8a9c7f59546586593c10172fec63e22c6a752b919dbd264c52c0ba0fdd3fdd1",
+      "png": "figures/method-diagram.png",
+      "png_sha256": "39a433c00cda984a0dc550b39f8a7357c73dfca9b95e93a1d566cdbb636b5fd1"
+    },
+    "research-directions": {
+      "source": "diagrams/research-directions.mmd",
+      "source_sha256": "87a5b4ad7cda6fe824a04bf47c317404084d7c2b6f1f1ebb3331a4385c21d7fd",
+      "svg": "figures/research-directions.svg",
+      "svg_sha256": "d0e1b7e10b316a2f16d5a2593ec29862d7f83ded0721ae0d9c6e429372dcdb78",
+      "png": "figures/research-directions.png",
+      "png_sha256": "33ca966fa8ad4462fd3083832ebcca3fa5f6410e4db8010f8030c5ae1e360a42"
+    },
+    "vit-backbone": {
+      "source": "diagrams/vit-backbone.mmd",
+      "source_sha256": "915b1bdde07e774b7b06dc42ecc93c40d28978874d0d11512912752cd8d07f90",
+      "svg": "figures/vit-backbone.svg",
+      "svg_sha256": "d39e77bc49625858c3ed359d53cf4c4afd88081c4a6a4111cc10160f9ccca2de",
+      "png": "figures/vit-backbone.png",
+      "png_sha256": "e3b2c20a458ea984e7df962d9faf947b953302fd523637946afba5327bc80cf1"
+    }
+  }
+}

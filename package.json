@@ -1,0 +1,12 @@
+{
+  "name": "peft-flowers102-diagrams",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Optional Mermaid renderer for the notebook diagrams",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "devDependencies": {
+    "@mermaid-js/mermaid-cli": "12.0.0"
+  }
+}

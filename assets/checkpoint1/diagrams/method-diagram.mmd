@@ -1,0 +1,31 @@
+flowchart TB
+    subgraph linear["Linear probing"]
+        direction LR
+        lx["Gambar<br/>224 x 224"] --> lb["ViT-B/16<br/>Bobot pretrained frozen"]
+        lb --> lh["Classifier trainable<br/>78.438 parameter"]
+        lh --> ly["102 kelas"]
+    end
+
+    subgraph lora["LoRA"]
+        direction LR
+        rx["Gambar<br/>224 x 224"] --> rb["ViT-B/16: pretrained frozen<br/>Delta Q, K, V pada 12 blok<br/>A: 768 ke 8, B: 8 ke 2304<br/>294.912 parameter trainable"]
+        rb --> rh["Classifier trainable<br/>78.438 parameter"]
+        rh --> ry["102 kelas"]
+    end
+
+    subgraph ssf["SSF"]
+        direction LR
+        sx["Gambar<br/>224 x 224"] --> sb["ViT-B/16: pretrained frozen<br/>Scale dan shift fitur<br/>205.824 parameter trainable"]
+        sb --> sh["Classifier trainable<br/>78.438 parameter"]
+        sh --> sy["102 kelas"]
+    end
+
+    linear ~~~ lora
+    lora ~~~ ssf
+
+    classDef frozen fill:#E7EDF7,stroke:#465D86,color:#253149
+    classDef mixed fill:#E7EDF7,stroke:#C47723,stroke-width:2px,color:#253149
+    classDef trained fill:#FFF0D8,stroke:#C47723,color:#5C3816
+    class lb frozen
+    class rb,sb mixed
+    class lh,rh,sh trained

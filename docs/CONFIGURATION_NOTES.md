@@ -1,16 +1,16 @@
 # Konfigurasi Checkpoint 1
 
-Konfigurasi aktual disimpan pada result.json setiap metode. Keputusan awal menggunakan satu resep yang dapat dijalankan dan diaudit pada satu task. Eksperimen ini belum menjalankan hyperparameter search paper.
+Konfigurasi aktual disimpan pada result.json setiap metode. Keputusan awal menggunakan satu konfigurasi yang dapat dijalankan dan diaudit pada satu task. Eksperimen ini belum menjalankan hyperparameter search paper.
 
 ## Yang mengikuti paper
 
-ViT-B/16 supervised ImageNet-21K, AdamW, effective batch 64, cosine schedule, dan 100 epoch mengikuti eksperimen VTAB pada Appendix A.1. Paper menonaktifkan augmentasi untuk menjaga perbandingan pada 19 task. Drop path 0.1 mengikuti rekomendasi regularisasi low-shot pada bagian 3 dan Figure 11. Manfaat drop path pada run kita belum diisolasi melalui ablation.
+ViT-B/16 supervised ImageNet-21K, AdamW, effective batch 64, cosine schedule, dan 100 epoch mengikuti eksperimen VTAB pada Appendix A.1. Paper menonaktifkan augmentation untuk menjaga perbandingan pada 19 task. Drop path 0.1 mengikuti rekomendasi regularisasi low-shot pada bagian 3 dan Figure 11. Manfaat drop path pada run kita belum diisolasi melalui ablation.
 
 Learning rate 0.001 dan weight decay 0.0001 dipilih dari grid [0.001, 0.01] dan [0.0001, 0.001]. LoRA rank 8 termasuk grid bottleneck [1, 8, 16, 32] pada Table 3. Nilai ini merupakan pilihan baseline awal, belum menjadi konfigurasi optimal untuk Flowers102.
 
 ## Yang mengikuti implementasi resmi
 
-Default VTAB upstream menetapkan warmup 10 epoch, learning rate awal 1e-6, minimum learning rate 1e-5, seed 42, crop size 224 dan normalized=False. Dataset loader menggunakan resize bicubic lalu ToTensor. Mempertahankan default mengurangi perubahan pendekatan selama reproduksi awal, dengan konsekuensi efek normalisasi dan augmentasi khusus dataset belum diuji.
+Default VTAB upstream menetapkan warmup 10 epoch, learning rate awal 1e-6, minimum learning rate 1e-5, seed 42, crop size 224 dan normalized=False. Dataset loader menggunakan resize bicubic lalu ToTensor. Mempertahankan default mengurangi perubahan pendekatan selama reproduksi awal, dengan konsekuensi efek normalization dan augmentation khusus dataset belum diuji.
 
 Implementasi native LoRA memakai satu down-projection A berukuran 768 -> 8 dan up-projection B berukuran 8 -> 2304, lalu membagi delta menjadi Q, K dan V. Ada 294.912 parameter LoRA di 12 blok, serta 78.438 parameter classifier. SSF memiliki 205.824 parameter scale/shift di lokasi fitur native, ditambah classifier yang sama. Diagram merangkum struktur aktual ini. Jalur inisialisasi penuh dari constructor upstream dipertahankan, sehingga laporan tidak mengasumsikan bahwa inisialisasi lokal sebuah submodule adalah keadaan akhirnya setelah seluruh constructor selesai.
 
